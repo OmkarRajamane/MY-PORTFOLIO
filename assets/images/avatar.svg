@@ -1,0 +1,107 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" width="100%" height="100%">
+  <defs>
+    <!-- Background Gradient -->
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0f172a"/>
+      <stop offset="50%" stop-color="#0b1120"/>
+      <stop offset="100%" stop-color="#080c14"/>
+    </linearGradient>
+
+    <!-- Cyan Glow Gradient -->
+    <linearGradient id="cyanGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#06b6d4"/>
+      <stop offset="100%" stop-color="#3b82f6"/>
+    </linearGradient>
+
+    <!-- Skin Tone Gradient -->
+    <linearGradient id="skinGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#e0a97a"/>
+      <stop offset="100%" stop-color="#c98a58"/>
+    </linearGradient>
+
+    <!-- Shadow Gradient -->
+    <linearGradient id="neckShadow" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#b07242"/>
+      <stop offset="100%" stop-color="#c98a58"/>
+    </linearGradient>
+
+    <!-- Hair Gradient -->
+    <linearGradient id="hairGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1e293b"/>
+      <stop offset="100%" stop-color="#0f172a"/>
+    </linearGradient>
+
+    <!-- Hoodie Gradient -->
+    <linearGradient id="hoodieGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1e293b"/>
+      <stop offset="100%" stop-color="#0f172a"/>
+    </linearGradient>
+
+    <!-- Soft Glow Filter -->
+    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="10" result="blur"/>
+      <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+    </filter>
+  </defs>
+
+  <!-- Background Base -->
+  <rect width="400" height="400" rx="36" fill="url(#bgGrad)"/>
+
+  <!-- Ambient Backdrop Circles -->
+  <circle cx="200" cy="170" r="130" fill="#06b6d4" opacity="0.12" filter="url(#glow)"/>
+  <circle cx="280" cy="220" r="90" fill="#6366f1" opacity="0.1" filter="url(#glow)"/>
+
+  <!-- Developer Avatar Character -->
+  <g transform="translate(0, 15)">
+    <!-- Shoulders & Hoodie Body -->
+    <path d="M100 360 C100 280, 130 260, 200 260 C270 260, 300 280, 300 360 Z" fill="url(#hoodieGrad)" stroke="#334155" stroke-width="2"/>
+
+    <!-- Hoodie Collar / T-Shirt Accent -->
+    <path d="M165 260 L200 300 L235 260 Z" fill="#06b6d4" opacity="0.85"/>
+    <path d="M175 260 L200 292 L225 260 Z" fill="#080c14"/>
+
+    <!-- Neck -->
+    <rect x="178" y="205" width="44" height="60" rx="10" fill="url(#neckShadow)"/>
+
+    <!-- Head / Face -->
+    <path d="M145 130 C145 80, 255 80, 255 130 C255 185, 230 230, 200 230 C170 230, 145 185, 145 130 Z" fill="url(#skinGrad)"/>
+
+    <!-- Ears -->
+    <circle cx="143" cy="155" r="14" fill="#c98a58"/>
+    <circle cx="257" cy="155" r="14" fill="#c98a58"/>
+    <circle cx="143" cy="155" r="8" fill="#b07242"/>
+    <circle cx="257" cy="155" r="8" fill="#b07242"/>
+
+    <!-- Eyes -->
+    <ellipse cx="175" cy="148" rx="5" ry="6" fill="#1e293b"/>
+    <ellipse cx="225" cy="148" rx="5" ry="6" fill="#1e293b"/>
+    <circle cx="176.5" cy="146.5" r="1.8" fill="#ffffff"/>
+    <circle cx="226.5" cy="146.5" r="1.8" fill="#ffffff"/>
+
+    <!-- Eyebrows -->
+    <path d="M162 135 Q175 129 188 135" stroke="#1e293b" stroke-width="3.5" stroke-linecap="round" fill="none"/>
+    <path d="M212 135 Q225 129 238 135" stroke="#1e293b" stroke-width="3.5" stroke-linecap="round" fill="none"/>
+
+    <!-- Nose -->
+    <path d="M197 155 Q200 168 206 168" stroke="#b07242" stroke-width="2.5" stroke-linecap="round" fill="none"/>
+
+    <!-- Friendly Smile -->
+    <path d="M185 188 Q200 200 215 188" stroke="#78350f" stroke-width="3" stroke-linecap="round" fill="none"/>
+
+    <!-- Stylish Modern Hair -->
+    <path d="M140 125 C140 65, 170 45, 205 45 C240 45, 265 65, 262 110 C252 85, 230 75, 200 75 C165 75, 145 95, 140 125 Z" fill="url(#hairGrad)"/>
+    <path d="M140 120 C138 90, 160 60, 205 52 C245 52, 265 80, 262 120 C258 95, 240 80, 205 80 C165 80, 146 100, 140 120 Z" fill="#0f172a"/>
+    <path d="M190 46 C215 42, 240 50, 255 65 C240 58, 215 54, 190 46 Z" fill="#38bdf8" opacity="0.3"/>
+
+    <!-- Modern Developer Glasses (Optional Chic Look) -->
+    <rect x="156" y="136" width="36" height="26" rx="8" fill="rgba(6, 182, 212, 0.08)" stroke="#38bdf8" stroke-width="2.5"/>
+    <rect x="208" y="136" width="36" height="26" rx="8" fill="rgba(6, 182, 212, 0.08)" stroke="#38bdf8" stroke-width="2.5"/>
+    <line x1="192" y1="148" x2="208" y2="148" stroke="#38bdf8" stroke-width="2.5"/>
+    <line x1="144" y1="144" x2="156" y2="146" stroke="#38bdf8" stroke-width="2"/>
+    <line x1="244" y1="146" x2="256" y2="144" stroke="#38bdf8" stroke-width="2"/>
+  </g>
+
+  <!-- Decorative Outer Border -->
+  <rect x="2" y="2" width="396" height="396" rx="34" fill="none" stroke="rgba(255, 255, 255, 0.08)" stroke-width="2"/>
+  <rect x="2" y="2" width="396" height="396" rx="34" fill="none" stroke="url(#cyanGrad)" stroke-width="1.5" stroke-dasharray="100 200" opacity="0.6"/>
+</svg>
