@@ -1,0 +1,730 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Omkar Rajamane - Computer Science & Engineering Student, AI & Full-Stack Developer. Portfolio showcasing projects, skills, education, and experience.">
+  <meta name="keywords" content="Omkar Rajamane, Portfolio, Computer Science, AI Developer, Python, Machine Learning, React, MySQL, Web Development">
+  <meta name="author" content="Omkar Rajamane">
+  <title>Omkar Rajamane | Portfolio</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500&family=Inter:wght@300;400;500;600;700&family=Outfit:wght@500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome 6.5.1 -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Navigation Bar -->
+  <header class="navbar" id="navbar">
+    <div class="nav-container">
+      <a href="#hero" class="nav-brand">
+        <span class="brand-code">&lt;</span><span class="brand-name">Omkar</span><span class="brand-accent">.dev</span><span class="brand-code">/&gt;</span>
+      </a>
+
+      <nav class="nav-links" id="nav-links">
+        <a href="#hero" class="nav-link active">Home</a>
+        <a href="#about" class="nav-link">About</a>
+        <a href="#skills" class="nav-link">Skills</a>
+        <a href="#projects" class="nav-link">Projects</a>
+        <a href="#experience" class="nav-link">Experience</a>
+        <a href="#education" class="nav-link">Education</a>
+        <a href="#certifications" class="nav-link">Certifications</a>
+        <a href="#contact" class="nav-link">Contact</a>
+      </nav>
+
+      <div class="nav-actions">
+        <a href="#contact" class="btn btn-sm btn-primary">Let's Talk</a>
+        <button class="nav-toggle" id="nav-toggle" aria-label="Toggle Navigation">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- HERO SECTION -->
+    <section class="hero-section" id="hero">
+      <div class="container hero-grid">
+        <div class="hero-text">
+          <div class="status-pill">
+            <span class="status-dot"></span>
+            <span>Final-Year CSE Student • Open to Opportunities</span>
+          </div>
+
+          <h1 class="hero-title">
+            Hi, I'm <span class="text-gradient">Omkar Rajamane</span>
+          </h1>
+
+          <div class="hero-role">
+            <span class="role-prefix">I am a </span>
+            <span class="typewriter" id="typewriter"></span>
+            <span class="typewriter-cursor">|</span>
+          </div>
+
+          <p class="hero-bio">
+            Final-year Computer Science and Engineering student at <strong>Jain College of Engineering</strong> (CGPA: 8.22).
+            Passionate about building intelligent AI systems, clean full-stack web applications, and efficient database architectures.
+          </p>
+
+          <div class="hero-buttons">
+            <a href="#projects" class="btn btn-primary">
+              <i class="fa-solid fa-code"></i> View Projects
+            </a>
+            <a href="#contact" class="btn btn-secondary">
+              <i class="fa-regular fa-envelope"></i> Contact Me
+            </a>
+            <button class="btn btn-outline" id="copy-email-btn" data-email="omkarrajamane593@gmail.com">
+              <i class="fa-regular fa-copy"></i> Copy Email
+            </button>
+          </div>
+
+          <div class="hero-socials">
+            <span class="social-label">Connect:</span>
+            <div class="social-icons">
+              <a href="https://github.com" target="_blank" rel="noopener noreferrer" aria-label="GitHub" class="social-btn">
+                <i class="fa-brands fa-github"></i>
+              </a>
+              <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" class="social-btn">
+                <i class="fa-brands fa-linkedin-in"></i>
+              </a>
+              <a href="mailto:omkarrajamane593@gmail.com" aria-label="Email" class="social-btn">
+                <i class="fa-solid fa-envelope"></i>
+              </a>
+              <a href="tel:+917795052916" aria-label="Phone" class="social-btn">
+                <i class="fa-solid fa-phone"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Modern Career & Tech Highlights Bento Card (No Image) -->
+        <div class="hero-highlights">
+          <div class="highlight-bento-card">
+            <!-- Top Status Bar -->
+            <div class="bento-header">
+              <div class="bento-status">
+                <span class="pulse-dot"></span>
+                <span>Available for 2026 Roles</span>
+              </div>
+              <div class="bento-badge"><i class="fa-solid fa-graduation-cap"></i> B.E. CSE (2026)</div>
+            </div>
+
+            <!-- Key Metric Highlights -->
+            <div class="bento-stats-row">
+              <div class="bento-stat-item">
+                <span class="bento-stat-val text-gradient">8.22</span>
+                <span class="bento-stat-lbl">CGPA (out of 10)</span>
+              </div>
+              <div class="bento-stat-divider"></div>
+              <div class="bento-stat-item">
+                <span class="bento-stat-val text-gradient">3+</span>
+                <span class="bento-stat-lbl">AI & Web Projects</span>
+              </div>
+              <div class="bento-stat-divider"></div>
+              <div class="bento-stat-item">
+                <span class="bento-stat-val text-gradient">4</span>
+                <span class="bento-stat-lbl">Certifications</span>
+              </div>
+            </div>
+
+            <!-- Core Focus Areas -->
+            <div class="bento-focus-section">
+              <div class="bento-section-title">Core Engineering Focus</div>
+              <div class="bento-focus-list">
+                <div class="bento-focus-item">
+                  <div class="focus-icon icon-cyan"><i class="fa-solid fa-brain"></i></div>
+                  <div class="focus-info">
+                    <strong>AI & Computer Vision</strong>
+                    <span>OpenCV, YOLOv8, ML, TF Lite</span>
+                  </div>
+                </div>
+                <div class="bento-focus-item">
+                  <div class="focus-icon icon-indigo"><i class="fa-solid fa-laptop-code"></i></div>
+                  <div class="focus-info">
+                    <strong>Full-Stack Development</strong>
+                    <span>React, Flask, Node.js, REST API</span>
+                  </div>
+                </div>
+                <div class="bento-focus-item">
+                  <div class="focus-icon icon-emerald"><i class="fa-solid fa-database"></i></div>
+                  <div class="focus-info">
+                    <strong>Database Management</strong>
+                    <span>MySQL, Firebase, Schema Design</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Tech Stack Tags Footer -->
+            <div class="bento-footer">
+              <span class="bento-footer-label">Tech Stack:</span>
+              <div class="bento-tech-pills">
+                <span class="pill"><i class="fa-brands fa-python"></i> Python</span>
+                <span class="pill"><i class="fa-brands fa-react"></i> React</span>
+                <span class="pill"><i class="fa-solid fa-database"></i> MySQL</span>
+                <span class="pill"><i class="fa-brands fa-js"></i> JavaScript</span>
+                <span class="pill"><i class="fa-brands fa-git-alt"></i> Git</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ABOUT SECTION -->
+    <section class="section" id="about">
+      <div class="container">
+        <div class="section-heading">
+          <span class="subtitle">Get To Know Me</span>
+          <h2 class="title">About <span class="text-gradient">Me</span></h2>
+          <p class="description">A brief overview of my background, academic standing, and engineering philosophy.</p>
+        </div>
+
+        <div class="about-grid">
+          <div class="about-card">
+            <div class="about-card-badge"><i class="fa-solid fa-user-graduate"></i> Background</div>
+            <h3 class="about-card-title">Computer Science & Engineering Student</h3>
+            <p class="about-text">
+              I am a final-year Computer Science and Engineering student at <strong>Jain College of Engineering, Belagavi</strong>.
+              I have developed a strong foundation in programming, software engineering, database management, and artificial intelligence.
+            </p>
+            <p class="about-text">
+              I enjoy turning complex, real-world problems into clean, high-performance software solutions — whether it's building computer vision systems, crafting responsive full-stack web applications, or optimizing database schemas.
+            </p>
+
+            <div class="contact-chips">
+              <div class="chip">
+                <i class="fa-solid fa-location-dot"></i> Belagavi, Karnataka
+              </div>
+              <div class="chip">
+                <i class="fa-solid fa-building-columns"></i> Jain College of Engg.
+              </div>
+              <div class="chip">
+                <i class="fa-solid fa-graduation-cap"></i> Class of 2026
+              </div>
+            </div>
+          </div>
+
+          <div class="stats-grid">
+            <div class="stat-box">
+              <div class="stat-icon"><i class="fa-solid fa-award"></i></div>
+              <div class="stat-value">8.22</div>
+              <div class="stat-label">B.E. CGPA (out of 10)</div>
+            </div>
+
+            <div class="stat-box">
+              <div class="stat-icon"><i class="fa-solid fa-folder-open"></i></div>
+              <div class="stat-value">3+</div>
+              <div class="stat-label">Key AI & Web Projects</div>
+            </div>
+
+            <div class="stat-box">
+              <div class="stat-icon"><i class="fa-solid fa-certificate"></i></div>
+              <div class="stat-value">4</div>
+              <div class="stat-label">Certifications Earned</div>
+            </div>
+
+            <div class="stat-box">
+              <div class="stat-icon"><i class="fa-solid fa-briefcase"></i></div>
+              <div class="stat-value">1</div>
+              <div class="stat-label">AI Internship Completed</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SKILLS SECTION -->
+    <section class="section" id="skills">
+      <div class="container">
+        <div class="section-heading">
+          <span class="subtitle">Technical Proficiency</span>
+          <h2 class="title">Skills & <span class="text-gradient">Technologies</span></h2>
+          <p class="description">Technologies, frameworks, and tools I use to build robust software.</p>
+        </div>
+
+        <div class="skills-grid">
+          <!-- Programming Languages -->
+          <div class="skill-group">
+            <div class="skill-group-header">
+              <i class="fa-solid fa-code"></i>
+              <h3>Programming Languages</h3>
+            </div>
+            <div class="skill-tags">
+              <span class="skill-tag"><i class="fa-brands fa-python"></i> Python</span>
+              <span class="skill-tag"><i class="fa-brands fa-js"></i> JavaScript</span>
+              <span class="skill-tag"><i class="fa-brands fa-html5"></i> HTML5</span>
+              <span class="skill-tag"><i class="fa-brands fa-css3-alt"></i> CSS3</span>
+            </div>
+          </div>
+
+          <!-- Frameworks & Libraries -->
+          <div class="skill-group">
+            <div class="skill-group-header">
+              <i class="fa-solid fa-layer-group"></i>
+              <h3>Frameworks & Libraries</h3>
+            </div>
+            <div class="skill-tags">
+              <span class="skill-tag"><i class="fa-brands fa-react"></i> React</span>
+              <span class="skill-tag"><i class="fa-solid fa-server"></i> Flask</span>
+              <span class="skill-tag"><i class="fa-brands fa-node-js"></i> Node.js</span>
+              <span class="skill-tag"><i class="fa-solid fa-chart-simple"></i> Streamlit</span>
+            </div>
+          </div>
+
+          <!-- Databases -->
+          <div class="skill-group">
+            <div class="skill-group-header">
+              <i class="fa-solid fa-database"></i>
+              <h3>Databases & Cloud</h3>
+            </div>
+            <div class="skill-tags">
+              <span class="skill-tag"><i class="fa-solid fa-database"></i> MySQL</span>
+              <span class="skill-tag"><i class="fa-solid fa-fire"></i> Firebase</span>
+              <span class="skill-tag"><i class="fa-solid fa-table"></i> DBMS Concepts</span>
+            </div>
+          </div>
+
+          <!-- AI, ML & Vision -->
+          <div class="skill-group">
+            <div class="skill-group-header">
+              <i class="fa-solid fa-brain"></i>
+              <h3>AI & Computer Vision</h3>
+            </div>
+            <div class="skill-tags">
+              <span class="skill-tag"><i class="fa-solid fa-robot"></i> Machine Learning</span>
+              <span class="skill-tag"><i class="fa-solid fa-eye"></i> OpenCV</span>
+              <span class="skill-tag"><i class="fa-solid fa-camera"></i> MediaPipe</span>
+              <span class="skill-tag"><i class="fa-solid fa-microchip"></i> TensorFlow Lite</span>
+              <span class="skill-tag"><i class="fa-solid fa-crosshairs"></i> YOLOv8</span>
+              <span class="skill-tag"><i class="fa-solid fa-font"></i> OCR & NLP</span>
+            </div>
+          </div>
+
+          <!-- Developer Tools -->
+          <div class="skill-group">
+            <div class="skill-group-header">
+              <i class="fa-solid fa-screwdriver-wrench"></i>
+              <h3>Developer Tools</h3>
+            </div>
+            <div class="skill-tags">
+              <span class="skill-tag"><i class="fa-brands fa-git-alt"></i> Git</span>
+              <span class="skill-tag"><i class="fa-brands fa-github"></i> GitHub</span>
+              <span class="skill-tag"><i class="fa-solid fa-code"></i> VS Code</span>
+            </div>
+          </div>
+
+          <!-- Core CS Subjects -->
+          <div class="skill-group">
+            <div class="skill-group-header">
+              <i class="fa-solid fa-book-bookmark"></i>
+              <h3>Core Fundamentals</h3>
+            </div>
+            <div class="skill-tags">
+              <span class="skill-tag"><i class="fa-solid fa-diagram-project"></i> Data Structures</span>
+              <span class="skill-tag"><i class="fa-solid fa-gears"></i> Algorithms</span>
+              <span class="skill-tag"><i class="fa-solid fa-sitemap"></i> Object-Oriented Prog.</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROJECTS SECTION (No Images Required) -->
+    <section class="section" id="projects">
+      <div class="container">
+        <div class="section-heading">
+          <span class="subtitle">Featured Work</span>
+          <h2 class="title">Engineering <span class="text-gradient">Projects</span></h2>
+          <p class="description">Selected projects engineered to solve real-world problems in healthcare, proctoring, and nutrition.</p>
+        </div>
+
+        <div class="projects-grid">
+          <!-- Project 1: Smart Medicine Tracker -->
+          <div class="project-card">
+            <div class="project-header">
+              <div class="project-icon-box">
+                <i class="fa-solid fa-notes-medical"></i>
+              </div>
+              <div class="project-year-badge">2026</div>
+            </div>
+
+            <h3 class="project-title">Smart Medicine Tracker</h3>
+
+            <div class="project-tech-tags">
+              <span>Python</span>
+              <span>Machine Learning</span>
+              <span>OCR</span>
+              <span>NLP</span>
+              <span>Flask</span>
+            </div>
+
+            <p class="project-desc">
+              An intelligent medication tracking system designed to enhance patient adherence and streamline prescription management.
+            </p>
+
+            <ul class="project-bullets">
+              <li><i class="fa-solid fa-angle-right"></i> Automated prescription OCR to scan and extract dosage instructions effortlessly.</li>
+              <li><i class="fa-solid fa-angle-right"></i> Intelligent scheduling and automated alerts to avoid missed medications.</li>
+              <li><i class="fa-solid fa-angle-right"></i> Clean Flask-backed REST API for patient record management.</li>
+            </ul>
+
+            <div class="project-footer">
+              <a href="#contact" class="project-link">
+                <span>Inquire details</span> <i class="fa-solid fa-arrow-right"></i>
+              </a>
+            </div>
+          </div>
+
+          <!-- Project 2: AI-Powered Examination System -->
+          <div class="project-card">
+            <div class="project-header">
+              <div class="project-icon-box">
+                <i class="fa-solid fa-user-shield"></i>
+              </div>
+              <div class="project-year-badge">2026</div>
+            </div>
+
+            <h3 class="project-title">AI-Powered Examination System</h3>
+
+            <div class="project-tech-tags">
+              <span>OpenCV</span>
+              <span>MediaPipe</span>
+              <span>TensorFlow Lite</span>
+              <span>Node.js</span>
+              <span>Firebase</span>
+            </div>
+
+            <p class="project-desc">
+              An AI-based online proctoring and assessment platform providing automated real-time exam monitoring and integrity verification.
+            </p>
+
+            <ul class="project-bullets">
+              <li><i class="fa-solid fa-angle-right"></i> Real-time multi-angle face and gaze tracking via MediaPipe & OpenCV.</li>
+              <li><i class="fa-solid fa-angle-right"></i> Lightweight on-device inference using TensorFlow Lite for minimal latency.</li>
+              <li><i class="fa-solid fa-angle-right"></i> Adaptive assessments with secure backend management using Node.js & Firebase.</li>
+            </ul>
+
+            <div class="project-footer">
+              <a href="#contact" class="project-link">
+                <span>Inquire details</span> <i class="fa-solid fa-arrow-right"></i>
+              </a>
+            </div>
+          </div>
+
+          <!-- Project 3: AI-Based Nutrition Detection & Calorie Estimation -->
+          <div class="project-card">
+            <div class="project-header">
+              <div class="project-icon-box">
+                <i class="fa-solid fa-bowl-food"></i>
+              </div>
+              <div class="project-year-badge">2025</div>
+            </div>
+
+            <h3 class="project-title">AI Nutrition & Calorie Estimation</h3>
+
+            <div class="project-tech-tags">
+              <span>Python</span>
+              <span>YOLOv8</span>
+              <span>OpenCV</span>
+              <span>Streamlit</span>
+            </div>
+
+            <p class="project-desc">
+              Computer vision system capable of identifying food items directly from photos and computing accurate nutritional estimates.
+            </p>
+
+            <ul class="project-bullets">
+              <li><i class="fa-solid fa-angle-right"></i> High-accuracy food classification and boundary localization with YOLOv8.</li>
+              <li><i class="fa-solid fa-angle-right"></i> Automated nutritional analysis calculating calories, proteins, fats, and carbs.</li>
+              <li><i class="fa-solid fa-angle-right"></i> Interactive Streamlit dashboard for real-time camera and image uploads.</li>
+            </ul>
+
+            <div class="project-footer">
+              <a href="#contact" class="project-link">
+                <span>Inquire details</span> <i class="fa-solid fa-arrow-right"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- EXPERIENCE SECTION -->
+    <section class="section" id="experience">
+      <div class="container">
+        <div class="section-heading">
+          <span class="subtitle">Work History</span>
+          <h2 class="title">Internship <span class="text-gradient">Experience</span></h2>
+          <p class="description">Practical industry training and development contributions.</p>
+        </div>
+
+        <div class="timeline">
+          <div class="timeline-item">
+            <div class="timeline-marker"></div>
+            <div class="timeline-card">
+              <div class="timeline-header">
+                <div>
+                  <h3 class="timeline-role">Artificial Intelligence Intern</h3>
+                  <div class="timeline-company"><i class="fa-solid fa-building"></i> KodBud</div>
+                </div>
+                <div class="timeline-period-badge">
+                  <i class="fa-regular fa-calendar"></i> 2026 • 4-Week Internship
+                </div>
+              </div>
+              <ul class="timeline-bullets">
+                <li>Successfully completed an intensive 4-week Artificial Intelligence internship at KodBud.</li>
+                <li>Gained hands-on experience in practical AI concepts, data processing pipelines, and machine learning models using Python.</li>
+                <li>Collaborated on real-world problem statements, algorithm optimization, and prototype validation.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- EDUCATION SECTION -->
+    <section class="section" id="education">
+      <div class="container">
+        <div class="section-heading">
+          <span class="subtitle">Academic Journey</span>
+          <h2 class="title">My <span class="text-gradient">Education</span></h2>
+          <p class="description">Academic qualifications, institutions, and performance milestones.</p>
+        </div>
+
+        <div class="education-grid">
+          <!-- B.E. Degree -->
+          <div class="edu-card">
+            <div class="edu-top">
+              <span class="edu-year">2023 – Present</span>
+              <span class="edu-score-badge">CGPA: 8.22 / 10</span>
+            </div>
+            <h3 class="edu-degree">Bachelor of Engineering (CSE)</h3>
+            <h4 class="edu-school"><i class="fa-solid fa-building-columns"></i> Jain College of Engineering, Belagavi</h4>
+            <p class="edu-desc">
+              Currently in the final year of Computer Science and Engineering with a consistent academic record and focus on AI, full-stack development, and DBMS.
+            </p>
+          </div>
+
+          <!-- Pre-University -->
+          <div class="edu-card">
+            <div class="edu-top">
+              <span class="edu-year">2021 – 2023</span>
+              <span class="edu-score-badge">Score: 77.66%</span>
+            </div>
+            <h3 class="edu-degree">Pre-University Education</h3>
+            <h4 class="edu-school"><i class="fa-solid fa-school"></i> B Shankaranand PU College, Kudachi</h4>
+            <p class="edu-desc">
+              Completed higher secondary education in Science stream with distinction.
+            </p>
+          </div>
+
+          <!-- SSLC -->
+          <div class="edu-card">
+            <div class="edu-top">
+              <span class="edu-year">2020 – 2021</span>
+              <span class="edu-score-badge">Score: 73.76%</span>
+            </div>
+            <h3 class="edu-degree">Secondary School (SSLC)</h3>
+            <h4 class="edu-school"><i class="fa-solid fa-school"></i> New High School, Kudachi</h4>
+            <p class="edu-desc">
+              Completed secondary schooling with strong foundations in mathematics and science.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CERTIFICATIONS SECTION -->
+    <section class="section" id="certifications">
+      <div class="container">
+        <div class="section-heading">
+          <span class="subtitle">Verified Credentials</span>
+          <h2 class="title">Certifications & <span class="text-gradient">Training</span></h2>
+          <p class="description">Professional certifications completed across AI, Python, and Web Development.</p>
+        </div>
+
+        <div class="cert-grid">
+          <!-- Cert 1 -->
+          <div class="cert-card">
+            <div class="cert-icon-wrap">
+              <i class="fa-solid fa-brain"></i>
+            </div>
+            <div class="cert-details">
+              <span class="cert-badge">Generative AI</span>
+              <h3 class="cert-name">Generative AI (Gen-AI Camp)</h3>
+              <p class="cert-org"><i class="fa-solid fa-award"></i> AlgoUniversity</p>
+            </div>
+          </div>
+
+          <!-- Cert 2 -->
+          <div class="cert-card">
+            <div class="cert-icon-wrap">
+              <i class="fa-solid fa-microchip"></i>
+            </div>
+            <div class="cert-details">
+              <span class="cert-badge">Artificial Intelligence</span>
+              <h3 class="cert-name">AI Fundamentals</h3>
+              <p class="cert-org"><i class="fa-solid fa-award"></i> IBM SkillsBuild</p>
+            </div>
+          </div>
+
+          <!-- Cert 3 -->
+          <div class="cert-card">
+            <div class="cert-icon-wrap">
+              <i class="fa-brands fa-python"></i>
+            </div>
+            <div class="cert-details">
+              <span class="cert-badge">Programming</span>
+              <h3 class="cert-name">Python Programming</h3>
+              <p class="cert-org"><i class="fa-solid fa-award"></i> Scaler</p>
+            </div>
+          </div>
+
+          <!-- Cert 4 -->
+          <div class="cert-card">
+            <div class="cert-icon-wrap">
+              <i class="fa-solid fa-globe"></i>
+            </div>
+            <div class="cert-details">
+              <span class="cert-badge">Web Development</span>
+              <h3 class="cert-name">Web Development</h3>
+              <p class="cert-org"><i class="fa-solid fa-award"></i> Infosys Springboard</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT SECTION -->
+    <section class="section" id="contact">
+      <div class="container">
+        <div class="section-heading">
+          <span class="subtitle">Get In Touch</span>
+          <h2 class="title">Contact <span class="text-gradient">Information</span></h2>
+          <p class="description">Have a question or an opportunity? Feel free to reach out directly.</p>
+        </div>
+
+        <div class="contact-grid">
+          <div class="contact-info-column">
+            <div class="contact-card">
+              <div class="contact-icon"><i class="fa-solid fa-envelope"></i></div>
+              <div class="contact-body">
+                <h4>Email Address</h4>
+                <a href="mailto:omkarrajamane593@gmail.com" class="contact-val">omkarrajamane593@gmail.com</a>
+              </div>
+              <button class="copy-btn" data-copy="omkarrajamane593@gmail.com" title="Copy Email">
+                <i class="fa-regular fa-copy"></i>
+              </button>
+            </div>
+
+            <div class="contact-card">
+              <div class="contact-icon"><i class="fa-solid fa-phone"></i></div>
+              <div class="contact-body">
+                <h4>Phone Number</h4>
+                <a href="tel:+917795052916" class="contact-val">+91 7795052916</a>
+              </div>
+              <button class="copy-btn" data-copy="+917795052916" title="Copy Phone Number">
+                <i class="fa-regular fa-copy"></i>
+              </button>
+            </div>
+
+            <div class="contact-card">
+              <div class="contact-icon"><i class="fa-solid fa-location-dot"></i></div>
+              <div class="contact-body">
+                <h4>Location</h4>
+                <span class="contact-val">Belagavi, Karnataka, India</span>
+              </div>
+            </div>
+
+            <div class="contact-card">
+              <div class="contact-icon"><i class="fa-brands fa-linkedin-in"></i></div>
+              <div class="contact-body">
+                <h4>Professional Links</h4>
+                <div class="contact-links-inline">
+                  <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="link-item"><i class="fa-brands fa-linkedin"></i> LinkedIn</a>
+                  <span>•</span>
+                  <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="link-item"><i class="fa-brands fa-github"></i> GitHub</a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Contact Message Form -->
+          <div class="contact-form-column">
+            <form class="contact-form" id="contact-form">
+              <div class="form-row">
+                <div class="form-field">
+                  <label for="form-name">Your Name</label>
+                  <input type="text" id="form-name" placeholder="Alex Smith" required>
+                </div>
+                <div class="form-field">
+                  <label for="form-email">Your Email</label>
+                  <input type="email" id="form-email" placeholder="alex@example.com" required>
+                </div>
+              </div>
+
+              <div class="form-field">
+                <label for="form-subject">Subject</label>
+                <input type="text" id="form-subject" placeholder="Project inquiry / Opportunity" required>
+              </div>
+
+              <div class="form-field">
+                <label for="form-message">Message</label>
+                <textarea id="form-message" rows="5" placeholder="Hi Omkar, I would like to discuss..." required></textarea>
+              </div>
+
+              <button type="submit" class="btn btn-primary btn-block" id="form-submit-btn">
+                <span>Send Message</span>
+                <i class="fa-solid fa-paper-plane"></i>
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container footer-content">
+      <div class="footer-left">
+        <a href="#hero" class="nav-brand">
+          <span class="brand-code">&lt;</span><span class="brand-name">Omkar</span><span class="brand-accent">.dev</span><span class="brand-code">/&gt;</span>
+        </a>
+        <p class="footer-tagline">Building clean, robust software solutions.</p>
+      </div>
+
+      <div class="footer-nav">
+        <a href="#hero">Home</a>
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#projects">Projects</a>
+        <a href="#experience">Experience</a>
+        <a href="#education">Education</a>
+        <a href="#contact">Contact</a>
+      </div>
+
+      <div class="footer-right">
+        <p class="footer-copy">&copy; <span id="year">2026</span> Omkar Rajamane.</p>
+        <p class="footer-location"><i class="fa-solid fa-location-dot"></i> Belagavi, Karnataka</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Toast Notification -->
+  <div class="toast" id="toast">Copied to clipboard!</div>
+
+  <!-- JavaScript File -->
+  <script src="script.js"></script>
+</body>
+</html>
