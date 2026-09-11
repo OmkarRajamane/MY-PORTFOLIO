@@ -3,15 +3,28 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Omkar Rajamane - Computer Science & Engineering Student, AI & Full-Stack Developer. Portfolio showcasing projects, skills, education, and experience.">
-  <meta name="keywords" content="Omkar Rajamane, Portfolio, Computer Science, AI Developer, Python, Machine Learning, React, MySQL, Web Development">
+  <meta name="description" content="Omkar Rajamane - Computer Science & Engineering Student, AI & Full-Stack Developer. Portfolio showcasing projects in AI, computer vision, web applications, and databases.">
+  <meta name="keywords" content="Omkar Rajamane, Portfolio, Computer Science, AI Developer, Python, Machine Learning, React, MySQL, Web Development, OpenCV, Belagavi">
   <meta name="author" content="Omkar Rajamane">
-  <title>Omkar Rajamane | Portfolio</title>
+  
+  <!-- Open Graph / Facebook / LinkedIn -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://omkarrajamane.dev">
+  <meta property="og:title" content="Omkar Rajamane | AI & Full-Stack Developer">
+  <meta property="og:description" content="Final-year CSE student passionate about building intelligent AI systems, clean full-stack web applications, and database architectures.">
+  <meta property="og:site_name" content="Omkar Rajamane Portfolio">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Omkar Rajamane | Portfolio">
+  <meta name="twitter:description" content="Computer Science & Engineering Student, AI & Full-Stack Developer.">
+
+  <title>Omkar Rajamane | AI & Full-Stack Developer</title>
 
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500&family=Inter:wght@300;400;500;600;700&family=Outfit:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600&family=Inter:wght@300;400;500;600;700&family=Outfit:wght@500;600;700;800&display=swap" rel="stylesheet">
 
   <!-- Font Awesome 6.5.1 -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
@@ -40,6 +53,9 @@
       </nav>
 
       <div class="nav-actions">
+        <a href="#contact" class="btn btn-sm btn-outline nav-resume-btn" id="nav-resume-btn">
+          <i class="fa-solid fa-file-lines"></i> Resume
+        </a>
         <a href="#contact" class="btn btn-sm btn-primary">Let's Talk</a>
         <button class="nav-toggle" id="nav-toggle" aria-label="Toggle Navigation">
           <span></span>
@@ -79,7 +95,10 @@
             <a href="#projects" class="btn btn-primary">
               <i class="fa-solid fa-code"></i> View Projects
             </a>
-            <a href="#contact" class="btn btn-secondary">
+            <a href="#contact" class="btn btn-secondary" id="hero-resume-btn">
+              <i class="fa-solid fa-file-arrow-down"></i> Resume / CV
+            </a>
+            <a href="#contact" class="btn btn-outline">
               <i class="fa-regular fa-envelope"></i> Contact Me
             </a>
             <button class="btn btn-outline" id="copy-email-btn" data-email="omkarrajamane593@gmail.com">
@@ -90,16 +109,16 @@
           <div class="hero-socials">
             <span class="social-label">Connect:</span>
             <div class="social-icons">
-              <a href="https://github.com" target="_blank" rel="noopener noreferrer" aria-label="GitHub" class="social-btn">
+              <a href="https://github.com" target="_blank" rel="noopener noreferrer" aria-label="GitHub Profile" class="social-btn">
                 <i class="fa-brands fa-github"></i>
               </a>
-              <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" class="social-btn">
+              <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn Profile" class="social-btn">
                 <i class="fa-brands fa-linkedin-in"></i>
               </a>
-              <a href="mailto:omkarrajamane593@gmail.com" aria-label="Email" class="social-btn">
+              <a href="mailto:omkarrajamane593@gmail.com" aria-label="Send Email" class="social-btn">
                 <i class="fa-solid fa-envelope"></i>
               </a>
-              <a href="tel:+917795052916" aria-label="Phone" class="social-btn">
+              <a href="tel:+917795052916" aria-label="Call Phone" class="social-btn">
                 <i class="fa-solid fa-phone"></i>
               </a>
             </div>
@@ -143,22 +162,22 @@
                 <div class="bento-focus-item">
                   <div class="focus-icon icon-cyan"><i class="fa-solid fa-brain"></i></div>
                   <div class="focus-info">
-                    <strong>AI & Computer Vision</strong>
-                    <span>OpenCV, YOLOv8, ML, TF Lite</span>
+                    <strong>Python & Problem Solving</strong>
+                    <span>Python, DSA, Problem Solving, OOP</span>
                   </div>
                 </div>
                 <div class="bento-focus-item">
                   <div class="focus-icon icon-indigo"><i class="fa-solid fa-laptop-code"></i></div>
                   <div class="focus-info">
                     <strong>Full-Stack Development</strong>
-                    <span>React, Flask, Node.js, REST API</span>
+                    <span>HTML, CSS, JavaScript, React, FastAPI</span>
                   </div>
                 </div>
                 <div class="bento-focus-item">
                   <div class="focus-icon icon-emerald"><i class="fa-solid fa-database"></i></div>
                   <div class="focus-info">
-                    <strong>Database Management</strong>
-                    <span>MySQL, Firebase, Schema Design</span>
+                    <strong>Database & Backend</strong>
+                    <span>PostgreSQL, MySQL, REST APIs</span>
                   </div>
                 </div>
               </div>
@@ -206,7 +225,7 @@
                 <i class="fa-solid fa-location-dot"></i> Belagavi, Karnataka
               </div>
               <div class="chip">
-                <i class="fa-solid fa-building-columns"></i> Jain College of Engg.
+                <i class="fa-solid fa-building-columns"></i> Jain College of Engineering.
               </div>
               <div class="chip">
                 <i class="fa-solid fa-graduation-cap"></i> Class of 2026
@@ -339,7 +358,7 @@
       </div>
     </section>
 
-    <!-- PROJECTS SECTION (No Images Required) -->
+    <!-- PROJECTS SECTION -->
     <section class="section" id="projects">
       <div class="container">
         <div class="section-heading">
@@ -348,9 +367,17 @@
           <p class="description">Selected projects engineered to solve real-world problems in healthcare, proctoring, and nutrition.</p>
         </div>
 
-        <div class="projects-grid">
+        <!-- Project Filter Buttons -->
+        <div class="project-filters" id="project-filters">
+          <button class="filter-btn active" data-filter="all">All Projects</button>
+          <button class="filter-btn" data-filter="ai-ml">AI & ML</button>
+          <button class="filter-btn" data-filter="vision">Computer Vision</button>
+          <button class="filter-btn" data-filter="fullstack">Full-Stack & Web</button>
+        </div>
+
+        <div class="projects-grid" id="projects-grid">
           <!-- Project 1: Smart Medicine Tracker -->
-          <div class="project-card">
+          <div class="project-card" data-category="ai-ml fullstack">
             <div class="project-header">
               <div class="project-icon-box">
                 <i class="fa-solid fa-notes-medical"></i>
@@ -379,14 +406,19 @@
             </ul>
 
             <div class="project-footer">
-              <a href="#contact" class="project-link">
-                <span>Inquire details</span> <i class="fa-solid fa-arrow-right"></i>
-              </a>
+              <div class="project-actions">
+                <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="btn-proj-link">
+                  <i class="fa-brands fa-github"></i> <span>Code</span>
+                </a>
+                <a href="#contact" class="btn-proj-link primary">
+                  <i class="fa-solid fa-arrow-up-right-from-square"></i> <span>Live Demo / Details</span>
+                </a>
+              </div>
             </div>
           </div>
 
           <!-- Project 2: AI-Powered Examination System -->
-          <div class="project-card">
+          <div class="project-card" data-category="ai-ml vision fullstack">
             <div class="project-header">
               <div class="project-icon-box">
                 <i class="fa-solid fa-user-shield"></i>
@@ -415,14 +447,19 @@
             </ul>
 
             <div class="project-footer">
-              <a href="#contact" class="project-link">
-                <span>Inquire details</span> <i class="fa-solid fa-arrow-right"></i>
-              </a>
+              <div class="project-actions">
+                <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="btn-proj-link">
+                  <i class="fa-brands fa-github"></i> <span>Code</span>
+                </a>
+                <a href="#contact" class="btn-proj-link primary">
+                  <i class="fa-solid fa-arrow-up-right-from-square"></i> <span>Live Demo / Details</span>
+                </a>
+              </div>
             </div>
           </div>
 
           <!-- Project 3: AI-Based Nutrition Detection & Calorie Estimation -->
-          <div class="project-card">
+          <div class="project-card" data-category="ai-ml vision">
             <div class="project-header">
               <div class="project-icon-box">
                 <i class="fa-solid fa-bowl-food"></i>
@@ -450,9 +487,14 @@
             </ul>
 
             <div class="project-footer">
-              <a href="#contact" class="project-link">
-                <span>Inquire details</span> <i class="fa-solid fa-arrow-right"></i>
-              </a>
+              <div class="project-actions">
+                <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="btn-proj-link">
+                  <i class="fa-brands fa-github"></i> <span>Code</span>
+                </a>
+                <a href="#contact" class="btn-proj-link primary">
+                  <i class="fa-solid fa-arrow-up-right-from-square"></i> <span>Live Demo / Details</span>
+                </a>
+              </div>
             </div>
           </div>
         </div>
@@ -720,6 +762,11 @@
       </div>
     </div>
   </footer>
+
+  <!-- Back to Top Button -->
+  <button class="back-to-top" id="back-to-top" aria-label="Back to Top">
+    <i class="fa-solid fa-arrow-up"></i>
+  </button>
 
   <!-- Toast Notification -->
   <div class="toast" id="toast">Copied to clipboard!</div>

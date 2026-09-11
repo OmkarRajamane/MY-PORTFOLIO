@@ -876,8 +876,40 @@ button {
 }
 
 /* --------------------------------------------------------------------------
-   9. Projects Section (Card-centric, No Images Needed)
+   9. Projects Section (Card-centric, Filters & Dynamic Actions)
    -------------------------------------------------------------------------- */
+.project-filters {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 40px;
+}
+
+.filter-btn {
+  padding: 8px 18px;
+  background: var(--bg-card);
+  border: 1px solid var(--border-card);
+  border-radius: var(--radius-full);
+  color: var(--text-muted);
+  font-size: 0.88rem;
+  font-weight: 500;
+  transition: var(--transition);
+}
+
+.filter-btn:hover {
+  color: var(--text-main);
+  border-color: var(--accent-cyan);
+  background: rgba(6, 182, 212, 0.08);
+}
+
+.filter-btn.active {
+  background: var(--gradient-accent);
+  color: #ffffff;
+  border-color: transparent;
+  box-shadow: 0 4px 15px rgba(6, 182, 212, 0.3);
+}
+
 .projects-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
@@ -893,6 +925,10 @@ button {
   flex-direction: column;
   transition: var(--transition);
   position: relative;
+}
+
+.project-card.hidden {
+  display: none !important;
 }
 
 .project-card:hover {
@@ -993,17 +1029,44 @@ button {
   border-top: 1px solid var(--border-subtle);
 }
 
-.project-link {
+.project-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.btn-proj-link {
   display: inline-flex;
   align-items: center;
   gap: 6px;
-  font-size: 0.9rem;
+  font-size: 0.85rem;
   font-weight: 600;
+  padding: 7px 14px;
+  border-radius: var(--radius-sm);
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid var(--border-card);
+  color: var(--text-muted);
+  transition: var(--transition);
+}
+
+.btn-proj-link:hover {
+  color: var(--accent-cyan);
+  border-color: var(--accent-cyan);
+  background: rgba(6, 182, 212, 0.1);
+}
+
+.btn-proj-link.primary {
+  background: rgba(6, 182, 212, 0.15);
+  border-color: rgba(6, 182, 212, 0.35);
   color: var(--accent-cyan);
 }
 
-.project-link:hover {
-  gap: 10px;
+.btn-proj-link.primary:hover {
+  background: var(--gradient-accent);
+  color: #ffffff;
+  border-color: transparent;
+  box-shadow: 0 4px 15px rgba(6, 182, 212, 0.3);
 }
 
 /* --------------------------------------------------------------------------
@@ -1461,7 +1524,59 @@ button {
 }
 
 /* --------------------------------------------------------------------------
-   15. Toast Notification
+   15. Back to Top Button & Scroll Reveal
+   -------------------------------------------------------------------------- */
+.back-to-top {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  width: 44px;
+  height: 44px;
+  border-radius: var(--radius-sm);
+  background: var(--bg-card);
+  border: 1px solid var(--border-card);
+  color: var(--accent-cyan);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.1rem;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(20px);
+  transition: var(--transition);
+  z-index: 999;
+}
+
+.back-to-top:hover {
+  background: var(--gradient-accent);
+  color: #ffffff;
+  border-color: transparent;
+  transform: translateY(-3px);
+  box-shadow: 0 10px 25px rgba(6, 182, 212, 0.4);
+}
+
+.back-to-top.visible {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+/* Scroll Reveal Animation Utility */
+.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.7s cubic-bezier(0.4, 0, 0.2, 1), transform 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+  will-change: opacity, transform;
+}
+
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* --------------------------------------------------------------------------
+   16. Toast Notification
    -------------------------------------------------------------------------- */
 .toast {
   position: fixed;
@@ -1489,7 +1604,7 @@ button {
 }
 
 /* --------------------------------------------------------------------------
-   16. Responsive Media Queries
+   17. Responsive Media Queries
    -------------------------------------------------------------------------- */
 @media (max-width: 992px) {
   .hero-grid {

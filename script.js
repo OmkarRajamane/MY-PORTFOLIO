@@ -7,8 +7,11 @@ document.addEventListener('DOMContentLoaded', () => {
   initTypewriter();
   initNavbarScrollSpy();
   initMobileMenu();
+  initProjectFilters();
   initClipboardActions();
   initContactForm();
+  initScrollReveal();
+  initBackToTop();
   initCurrentYear();
 });
 
@@ -94,7 +97,7 @@ function initNavbarScrollSpy() {
     });
   }
 
-  window.addEventListener('scroll', handleScroll);
+  window.addEventListener('scroll', handleScroll, { passive: true });
   handleScroll(); // Initial call
 }
 
@@ -131,32 +134,45 @@ function initMobileMenu() {
 }
 
 /* --------------------------------------------------------------------------
-   4. Copy to Clipboard Actions (Email, Phone, Code)
+   4. Project Category Filtering
+   -------------------------------------------------------------------------- */
+function initProjectFilters() {
+  const filterButtons = document.querySelectorAll('.filter-btn');
+  const projectCards = document.querySelectorAll('.project-card');
+
+  if (!filterButtons.length || !projectCards.length) return;
+
+  filterButtons.forEach(btn => {
+    btn.addEventListener('click', () => {
+      filterButtons.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+
+      const filterValue = btn.getAttribute('data-filter');
+
+      projectCards.forEach(card => {
+        const categories = card.getAttribute('data-category') || '';
+        if (filterValue === 'all' || categories.includes(filterValue)) {
+          card.classList.remove('hidden');
+        } else {
+          card.classList.add('hidden');
+        }
+      });
+    });
+  });
+}
+
+/* --------------------------------------------------------------------------
+   5. Copy to Clipboard Actions & Resume CTA Handler
    -------------------------------------------------------------------------- */
 function initClipboardActions() {
   const copyEmailBtn = document.getElementById('copy-email-btn');
-  const terminalCopyBtn = document.getElementById('terminal-copy-btn');
   const copyButtons = document.querySelectorAll('.copy-btn');
+  const resumeButtons = [document.getElementById('nav-resume-btn'), document.getElementById('hero-resume-btn')];
 
   if (copyEmailBtn) {
     copyEmailBtn.addEventListener('click', () => {
       const email = copyEmailBtn.getAttribute('data-email');
       copyToClipboard(email, 'Email copied to clipboard!');
-    });
-  }
-
-  if (terminalCopyBtn) {
-    terminalCopyBtn.addEventListener('click', () => {
-      const codeSnippet = `const engineer = {
-  name: "Omkar Rajamane",
-  degree: "B.E. Computer Science (2026)",
-  college: "Jain College of Engineering",
-  cgpa: 8.22,
-  location: "Belagavi, Karnataka",
-  primaryStack: ["Python", "React", "Node.js", "MySQL", "Flask", "OpenCV"],
-  availableForHire: true
-};`;
-      copyToClipboard(codeSnippet, 'Profile code copied to clipboard!');
     });
   }
 
@@ -166,11 +182,21 @@ function initClipboardActions() {
       copyToClipboard(textToCopy, `Copied "${textToCopy}" to clipboard!`);
     });
   });
+
+  resumeButtons.forEach(btn => {
+    if (btn) {
+      btn.addEventListener('click', (e) => {
+        const href = btn.getAttribute('href');
+        if (href === '#contact') {
+          showToast('Feel free to request the complete CV via the contact section!');
+        }
+      });
+    }
+  });
 }
 
 function copyToClipboard(text, message = 'Copied to clipboard!') {
   if (!navigator.clipboard) {
-    // Fallback for older browsers
     const textarea = document.createElement('textarea');
     textarea.value = text;
     document.body.appendChild(textarea);
@@ -203,7 +229,7 @@ function showToast(message) {
 }
 
 /* --------------------------------------------------------------------------
-   5. Contact Form Handler (Opens Mail Client + Toast)
+   6. Contact Form Handler (Opens Mail Client + Toast)
    -------------------------------------------------------------------------- */
 function initContactForm() {
   const form = document.getElementById('contact-form');
@@ -231,7 +257,60 @@ function initContactForm() {
 }
 
 /* --------------------------------------------------------------------------
-   6. Dynamic Copyright Year
+   7. Smooth Scroll Reveal (Intersection Observer)
+   -------------------------------------------------------------------------- */
+function initScrollReveal() {
+  const elementsToReveal = document.querySelectorAll(
+    '.about-card, .stat-box, .skill-group, .project-card, .timeline-item, .edu-card, .cert-card, .contact-card, .contact-form-column'
+  );
+
+  elementsToReveal.forEach(el => el.classList.add('reveal'));
+
+  if ('IntersectionObserver' in window) {
+    const revealObserver = new IntersectionObserver((entries, observer) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('active');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, {
+      root: null,
+      threshold: 0.1,
+      rootMargin: '0px 0px -40px 0px'
+    });
+
+    elementsToReveal.forEach(el => revealObserver.observe(el));
+  } else {
+    elementsToReveal.forEach(el => el.classList.add('active'));
+  }
+}
+
+/* --------------------------------------------------------------------------
+   8. Back to Top Button
+   -------------------------------------------------------------------------- */
+function initBackToTop() {
+  const backToTopBtn = document.getElementById('back-to-top');
+  if (!backToTopBtn) return;
+
+  window.addEventListener('scroll', () => {
+    if (window.pageYOffset > 400) {
+      backToTopBtn.classList.add('visible');
+    } else {
+      backToTopBtn.classList.remove('visible');
+    }
+  }, { passive: true });
+
+  backToTopBtn.addEventListener('click', () => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
+  });
+}
+
+/* --------------------------------------------------------------------------
+   9. Dynamic Copyright Year
    -------------------------------------------------------------------------- */
 function initCurrentYear() {
   const yearElement = document.getElementById('year');
