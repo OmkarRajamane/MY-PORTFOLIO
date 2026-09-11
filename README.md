@@ -33,4 +33,4 @@ That's it! You can now view the portfolio.
 
 ## Author
 
-Omkar Rajamane
+Omkar S Rajamane
