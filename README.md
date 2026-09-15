@@ -40,15 +40,6 @@ A sleek, responsive, and performance-driven personal portfolio website built wit
 
 ---
 
-## 📂 Project Structure
-
-```
-portfolio/
-├── index.html       # Semantic HTML layout and sections
-├── style.css        # Custom design system, typography, and responsive styling
-├── script.js        # Interactive features, filters, scroll reveal, and toast engine
-└── README.md        # Project documentation
-```
 
 ---
 
