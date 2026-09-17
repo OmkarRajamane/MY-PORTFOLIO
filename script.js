@@ -1,90 +1,115 @@
 /**
- * Omkar Rajamane - Portfolio JavaScript Engine
- * Clean, lightweight, and modern interactive logic
+ * Omkar Rajamane - Portfolio JavaScript
+ * Handles Theme Toggling, Mobile Menu, Active ScrollSpy, Form Validation & Submission, Copy-to-Clipboard
  */
 
 document.addEventListener('DOMContentLoaded', () => {
-  initTypewriter();
-  initNavbarScrollSpy();
+  initThemeToggle();
   initMobileMenu();
-  initProjectFilters();
-  initClipboardActions();
+  initScrollSpy();
+  initCopyToClipboard();
   initContactForm();
-  initScrollReveal();
-  initBackToTop();
-  initCurrentYear();
 });
 
-/* --------------------------------------------------------------------------
-   1. Dynamic Typewriter Effect in Hero Section
-   -------------------------------------------------------------------------- */
-function initTypewriter() {
-  const typewriterElement = document.getElementById('typewriter');
-  if (!typewriterElement) return;
+/* ==========================================================================
+   1. Theme Toggle (Dark / Light Mode)
+   ========================================================================== */
+function initThemeToggle() {
+  const themeToggleBtn = document.getElementById('theme-toggle');
+  const htmlRoot = document.documentElement;
 
-  const roles = [
-    'Python & AI Developer',
-    'Full-Stack Web Developer',
-    'Database & Problem Solver',
-    'Computer Science Engineer'
-  ];
+  // Retrieve saved theme or default to dark
+  const savedTheme = localStorage.getItem('portfolio-theme');
+  const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+  const initialTheme = savedTheme || (prefersDark ? 'dark' : 'dark'); // Default to sleek dark
 
-  let roleIndex = 0;
-  let charIndex = 0;
-  let isDeleting = false;
-  let typingSpeed = 90;
+  setTheme(initialTheme);
 
-  function type() {
-    const currentRole = roles[roleIndex];
-
-    if (isDeleting) {
-      typewriterElement.textContent = currentRole.substring(0, charIndex - 1);
-      charIndex--;
-      typingSpeed = 40;
-    } else {
-      typewriterElement.textContent = currentRole.substring(0, charIndex + 1);
-      charIndex++;
-      typingSpeed = 80;
-    }
-
-    if (!isDeleting && charIndex === currentRole.length) {
-      typingSpeed = 2000; // Pause after typing
-      isDeleting = true;
-    } else if (isDeleting && charIndex === 0) {
-      isDeleting = false;
-      roleIndex = (roleIndex + 1) % roles.length;
-      typingSpeed = 350; // Pause before new word
-    }
-
-    setTimeout(type, typingSpeed);
+  if (themeToggleBtn) {
+    themeToggleBtn.addEventListener('click', () => {
+      const currentTheme = htmlRoot.getAttribute('data-theme') || 'dark';
+      const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+      setTheme(newTheme);
+      showToast(`Switched to ${newTheme} mode`);
+    });
   }
 
-  type();
+  function setTheme(theme) {
+    htmlRoot.setAttribute('data-theme', theme);
+    localStorage.setItem('portfolio-theme', theme);
+  }
 }
 
-/* --------------------------------------------------------------------------
-   2. Sticky Navbar & Active Section ScrollSpy
-   -------------------------------------------------------------------------- */
-function initNavbarScrollSpy() {
-  const navbar = document.getElementById('navbar');
-  const sections = document.querySelectorAll('section[id]');
+/* ==========================================================================
+   2. Mobile Navigation Menu
+   ========================================================================== */
+function initMobileMenu() {
+  const mobileToggle = document.getElementById('mobile-toggle');
+  const navMenu = document.getElementById('nav-menu');
   const navLinks = document.querySelectorAll('.nav-link');
 
-  function handleScroll() {
-    const scrollY = window.pageYOffset;
+  if (!mobileToggle || !navMenu) return;
 
-    // Sticky navbar shadow
-    if (scrollY > 30) {
-      navbar.classList.add('scrolled');
+  mobileToggle.addEventListener('click', () => {
+    const isOpen = navMenu.classList.contains('open');
+    if (isOpen) {
+      closeMenu();
     } else {
-      navbar.classList.remove('scrolled');
+      openMenu();
     }
+  });
 
-    // ScrollSpy active link
-    sections.forEach(section => {
-      const sectionHeight = section.offsetHeight;
-      const sectionTop = section.offsetTop - 120;
-      const sectionId = section.getAttribute('id');
+  // Close menu when clicking on any nav link
+  navLinks.forEach(link => {
+    link.addEventListener('click', () => {
+      if (navMenu.classList.contains('open')) {
+        closeMenu();
+      }
+    });
+  });
+
+  // Close on click outside
+  document.addEventListener('click', (e) => {
+    if (navMenu.classList.contains('open') && !navMenu.contains(e.target) && !mobileToggle.contains(e.target)) {
+      closeMenu();
+    }
+  });
+
+  // Close on Escape key
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && navMenu.classList.contains('open')) {
+      closeMenu();
+    }
+  });
+
+  function openMenu() {
+    navMenu.classList.add('open');
+    mobileToggle.setAttribute('aria-expanded', 'true');
+  }
+
+  function closeMenu() {
+    navMenu.classList.remove('open');
+    mobileToggle.setAttribute('aria-expanded', 'false');
+  }
+}
+
+/* ==========================================================================
+   3. Active Section ScrollSpy
+   ========================================================================== */
+function initScrollSpy() {
+  const sections = document.querySelectorAll('section[id]');
+  const navLinks = document.querySelectorAll('.nav-menu .nav-link');
+
+  if (!sections.length || !navLinks.length) return;
+
+  function updateActiveLink() {
+    const scrollY = window.pageYOffset;
+    const navHeight = 90;
+
+    sections.forEach(current => {
+      const sectionHeight = current.offsetHeight;
+      const sectionTop = current.offsetTop - navHeight;
+      const sectionId = current.getAttribute('id');
 
       if (scrollY >= sectionTop && scrollY < sectionTop + sectionHeight) {
         navLinks.forEach(link => {
@@ -97,224 +122,196 @@ function initNavbarScrollSpy() {
     });
   }
 
-  window.addEventListener('scroll', handleScroll, { passive: true });
-  handleScroll(); // Initial call
+  window.addEventListener('scroll', updateActiveLink, { passive: true });
+  updateActiveLink();
 }
 
-/* --------------------------------------------------------------------------
-   3. Mobile Navigation Menu Toggle
-   -------------------------------------------------------------------------- */
-function initMobileMenu() {
-  const navToggle = document.getElementById('nav-toggle');
-  const navLinks = document.getElementById('nav-links');
-  const links = document.querySelectorAll('.nav-link');
-
-  if (!navToggle || !navLinks) return;
-
-  navToggle.addEventListener('click', () => {
-    navToggle.classList.toggle('active');
-    navLinks.classList.toggle('open');
-  });
-
-  // Close menu on link click
-  links.forEach(link => {
-    link.addEventListener('click', () => {
-      navToggle.classList.remove('active');
-      navLinks.classList.remove('open');
-    });
-  });
-
-  // Close menu on outside click
-  document.addEventListener('click', (e) => {
-    if (!navLinks.contains(e.target) && !navToggle.contains(e.target) && navLinks.classList.contains('open')) {
-      navToggle.classList.remove('active');
-      navLinks.classList.remove('open');
-    }
-  });
-}
-
-/* --------------------------------------------------------------------------
-   4. Project Category Filtering
-   -------------------------------------------------------------------------- */
-function initProjectFilters() {
-  const filterButtons = document.querySelectorAll('.filter-btn');
-  const projectCards = document.querySelectorAll('.project-card');
-
-  if (!filterButtons.length || !projectCards.length) return;
-
-  filterButtons.forEach(btn => {
-    btn.addEventListener('click', () => {
-      filterButtons.forEach(b => b.classList.remove('active'));
-      btn.classList.add('active');
-
-      const filterValue = btn.getAttribute('data-filter');
-
-      projectCards.forEach(card => {
-        const categories = card.getAttribute('data-category') || '';
-        if (filterValue === 'all' || categories.includes(filterValue)) {
-          card.classList.remove('hidden');
-        } else {
-          card.classList.add('hidden');
-        }
-      });
-    });
-  });
-}
-
-/* --------------------------------------------------------------------------
-   5. Copy to Clipboard Actions & Resume CTA Handler
-   -------------------------------------------------------------------------- */
-function initClipboardActions() {
-  const copyEmailBtn = document.getElementById('copy-email-btn');
+/* ==========================================================================
+   4. Copy to Clipboard
+   ========================================================================== */
+function initCopyToClipboard() {
   const copyButtons = document.querySelectorAll('.copy-btn');
-  const resumeButtons = [document.getElementById('nav-resume-btn'), document.getElementById('hero-resume-btn')];
 
-  if (copyEmailBtn) {
-    copyEmailBtn.addEventListener('click', () => {
-      const email = copyEmailBtn.getAttribute('data-email');
-      copyToClipboard(email, 'Email copied to clipboard!');
+  copyButtons.forEach(button => {
+    button.addEventListener('click', async () => {
+      const textToCopy = button.getAttribute('data-copy');
+      if (!textToCopy) return;
+
+      try {
+        await navigator.clipboard.writeText(textToCopy);
+        showToast(`Copied "${textToCopy}" to clipboard!`);
+      } catch (err) {
+        // Fallback for older browsers
+        const tempInput = document.createElement('input');
+        tempInput.value = textToCopy;
+        document.body.appendChild(tempInput);
+        tempInput.select();
+        document.execCommand('copy');
+        document.body.removeChild(tempInput);
+        showToast(`Copied "${textToCopy}" to clipboard!`);
+      }
     });
-  }
-
-  copyButtons.forEach(btn => {
-    btn.addEventListener('click', () => {
-      const textToCopy = btn.getAttribute('data-copy');
-      copyToClipboard(textToCopy, `Copied "${textToCopy}" to clipboard!`);
-    });
-  });
-
-  resumeButtons.forEach(btn => {
-    if (btn) {
-      btn.addEventListener('click', (e) => {
-        const href = btn.getAttribute('href');
-        if (href === '#contact') {
-          showToast('Feel free to request the complete CV via the contact section!');
-        }
-      });
-    }
   });
 }
 
-function copyToClipboard(text, message = 'Copied to clipboard!') {
-  if (!navigator.clipboard) {
-    const textarea = document.createElement('textarea');
-    textarea.value = text;
-    document.body.appendChild(textarea);
-    textarea.select();
-    document.execCommand('copy');
-    document.body.removeChild(textarea);
-    showToast(message);
-    return;
-  }
-
-  navigator.clipboard.writeText(text)
-    .then(() => {
-      showToast(message);
-    })
-    .catch(() => {
-      showToast('Failed to copy. Please copy manually.');
-    });
-}
-
-function showToast(message) {
-  const toast = document.getElementById('toast');
-  if (!toast) return;
-
-  toast.textContent = message;
-  toast.classList.add('show');
-
-  setTimeout(() => {
-    toast.classList.remove('show');
-  }, 2800);
-}
-
-/* --------------------------------------------------------------------------
-   6. Contact Form Handler (Opens Mail Client + Toast)
-   -------------------------------------------------------------------------- */
+/* ==========================================================================
+   5. Contact Form Validation & Submission
+   ========================================================================== */
 function initContactForm() {
   const form = document.getElementById('contact-form');
   if (!form) return;
 
-  form.addEventListener('submit', (e) => {
+  const nameInput = document.getElementById('contact-name');
+  const emailInput = document.getElementById('contact-email');
+  const subjectInput = document.getElementById('contact-subject');
+  const messageInput = document.getElementById('contact-message');
+  const submitBtn = document.getElementById('submit-btn');
+  const formStatus = document.getElementById('form-status');
+
+  const nameError = document.getElementById('name-error');
+  const emailError = document.getElementById('email-error');
+  const messageError = document.getElementById('message-error');
+
+  // Real-time input cleaning
+  [nameInput, emailInput, messageInput].forEach(input => {
+    if (!input) return;
+    input.addEventListener('input', () => {
+      input.classList.remove('is-invalid');
+      const errEl = document.getElementById(`${input.id.replace('contact-', '')}-error`);
+      if (errEl) errEl.textContent = '';
+    });
+  });
+
+  form.addEventListener('submit', async (e) => {
     e.preventDefault();
 
-    const name = document.getElementById('form-name').value.trim();
-    const email = document.getElementById('form-email').value.trim();
-    const subject = document.getElementById('form-subject').value.trim();
-    const message = document.getElementById('form-message').value.trim();
+    // Reset errors
+    nameError.textContent = '';
+    emailError.textContent = '';
+    messageError.textContent = '';
+    formStatus.style.display = 'none';
+    formStatus.className = 'form-status-alert';
+    formStatus.textContent = '';
 
-    if (!name || !email || !subject || !message) {
-      showToast('Please fill out all required fields.');
+    const name = nameInput.value.trim();
+    const email = emailInput.value.trim();
+    const subject = subjectInput ? subjectInput.value.trim() : 'Portfolio Inquiry';
+    const message = messageInput.value.trim();
+
+    let isValid = true;
+
+    // Validate Name
+    if (!name) {
+      nameError.textContent = 'Please enter your name.';
+      nameInput.classList.add('is-invalid');
+      isValid = false;
+    } else if (name.length < 2) {
+      nameError.textContent = 'Name must be at least 2 characters.';
+      nameInput.classList.add('is-invalid');
+      isValid = false;
+    }
+
+    // Validate Email
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!email) {
+      emailError.textContent = 'Please enter your email address.';
+      emailInput.classList.add('is-invalid');
+      isValid = false;
+    } else if (!emailRegex.test(email)) {
+      emailError.textContent = 'Please enter a valid email address.';
+      emailInput.classList.add('is-invalid');
+      isValid = false;
+    }
+
+    // Validate Message
+    if (!message) {
+      messageError.textContent = 'Please enter your message.';
+      messageInput.classList.add('is-invalid');
+      isValid = false;
+    } else if (message.length < 10) {
+      messageError.textContent = 'Message should be at least 10 characters.';
+      messageInput.classList.add('is-invalid');
+      isValid = false;
+    }
+
+    if (!isValid) {
       return;
     }
 
-    const mailtoUrl = `mailto:omkarrajamane593@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(`Hi Omkar,\n\n${message}\n\nFrom: ${name} (${email})`)}`;
+    // Enter Loading State
+    submitBtn.classList.add('is-loading');
+    submitBtn.disabled = true;
 
-    window.location.href = mailtoUrl;
-    showToast('Opening your email client...');
-    form.reset();
-  });
-}
+    try {
+      // Endpoint using Formspree configured to recipient omkarrajamane593@gmail.com
+      const endpoint = 'https://formspree.io/f/omkarrajamane593@gmail.com';
 
-/* --------------------------------------------------------------------------
-   7. Smooth Scroll Reveal (Intersection Observer)
-   -------------------------------------------------------------------------- */
-function initScrollReveal() {
-  const elementsToReveal = document.querySelectorAll(
-    '.about-card, .stat-box, .skill-group, .project-card, .timeline-item, .edu-card, .cert-card, .contact-card, .contact-form-column'
-  );
-
-  elementsToReveal.forEach(el => el.classList.add('reveal'));
-
-  if ('IntersectionObserver' in window) {
-    const revealObserver = new IntersectionObserver((entries, observer) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('active');
-          observer.unobserve(entry.target);
-        }
+      const response = await fetch(endpoint, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Accept': 'application/json'
+        },
+        body: JSON.stringify({
+          name: name,
+          email: email,
+          _subject: subject || `Portfolio Contact from ${name}`,
+          message: message
+        })
       });
-    }, {
-      root: null,
-      threshold: 0.1,
-      rootMargin: '0px 0px -40px 0px'
-    });
 
-    elementsToReveal.forEach(el => revealObserver.observe(el));
-  } else {
-    elementsToReveal.forEach(el => el.classList.add('active'));
-  }
-}
-
-/* --------------------------------------------------------------------------
-   8. Back to Top Button
-   -------------------------------------------------------------------------- */
-function initBackToTop() {
-  const backToTopBtn = document.getElementById('back-to-top');
-  if (!backToTopBtn) return;
-
-  window.addEventListener('scroll', () => {
-    if (window.pageYOffset > 400) {
-      backToTopBtn.classList.add('visible');
-    } else {
-      backToTopBtn.classList.remove('visible');
+      if (response.ok) {
+        formStatus.textContent = 'Thank you! Your message has been sent successfully. I will get back to you soon.';
+        formStatus.classList.add('success');
+        formStatus.style.display = 'block';
+        form.reset();
+        showToast('Message sent successfully!');
+      } else {
+        // If Formspree requires activation or returns error, provide direct mailto fallback
+        const mailtoUrl = `mailto:omkarrajamane593@gmail.com?subject=${encodeURIComponent(subject || 'Portfolio Message from ' + name)}&body=${encodeURIComponent(`From: ${name} (${email})\n\n${message}`)}`;
+        
+        formStatus.innerHTML = `Unable to submit automatically. Please <a href="${mailtoUrl}" style="text-decoration:underline;font-weight:bold;color:inherit;">click here to send directly via your email client</a>.`;
+        formStatus.classList.add('error');
+        formStatus.style.display = 'block';
+      }
+    } catch (err) {
+      // Network/CORS fallback
+      const mailtoUrl = `mailto:omkarrajamane593@gmail.com?subject=${encodeURIComponent(subject || 'Portfolio Message from ' + name)}&body=${encodeURIComponent(`From: ${name} (${email})\n\n${message}`)}`;
+      
+      formStatus.innerHTML = `Network issue. Please <a href="${mailtoUrl}" style="text-decoration:underline;font-weight:bold;color:inherit;">click here to send via your email client</a>.`;
+      formStatus.classList.add('error');
+      formStatus.style.display = 'block';
+    } finally {
+      submitBtn.classList.remove('is-loading');
+      submitBtn.disabled = false;
     }
-  }, { passive: true });
-
-  backToTopBtn.addEventListener('click', () => {
-    window.scrollTo({
-      top: 0,
-      behavior: 'smooth'
-    });
   });
 }
 
-/* --------------------------------------------------------------------------
-   9. Dynamic Copyright Year
-   -------------------------------------------------------------------------- */
-function initCurrentYear() {
-  const yearElement = document.getElementById('year');
-  if (yearElement) {
-    yearElement.textContent = new Date().getFullYear();
-  }
+/* ==========================================================================
+   6. Toast Notifications
+   ========================================================================== */
+function showToast(message) {
+  const container = document.getElementById('toast-container');
+  if (!container) return;
+
+  const toast = document.createElement('div');
+  toast.className = 'toast';
+  toast.innerHTML = `
+    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color:var(--color-primary);"><path d="M20 6 9 17l-5-5"/></svg>
+    <span>${message}</span>
+  `;
+
+  container.appendChild(toast);
+
+  setTimeout(() => {
+    toast.style.opacity = '0';
+    toast.style.transform = 'translateY(10px)';
+    toast.style.transition = 'all 0.3s ease';
+    setTimeout(() => {
+      if (toast.parentNode) {
+        toast.parentNode.removeChild(toast);
+      }
+    }, 300);
+  }, 3500);
 }

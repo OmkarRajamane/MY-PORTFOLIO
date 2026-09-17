@@ -1,75 +1,51 @@
-# Omkar Rajamane - Developer Portfolio
+# Omkar Rajamane - Personal Portfolio
 
-A sleek, responsive, and performance-driven personal portfolio website built with modern Vanilla HTML5, CSS3, and JavaScript. Showcasing software engineering projects in Artificial Intelligence, Computer Vision, Full-Stack Web Development, and Database Systems.
-
----
-
-## 🛠️ Technologies Used
-
-- **HTML5**: Semantic document layout and clean accessibility hierarchy
-- **CSS3**: Modern CSS variables, glassmorphism, responsive bento grid, and smooth animations
-- **JavaScript (ES6+)**: Interactive typewriter effect, project category filters, scroll reveal, and clipboard utilities
-- **Google Fonts**: Outfit, Inter, and Fira Code
-- **Icons**: Font Awesome 6.5.1
+Personal developer portfolio website of **Omkar Rajamane**, a final-year Computer Science and Engineering student at Jain College of Engineering, Belagavi, and Aspiring Software Engineer.
 
 ---
 
-## ✨ Features
-
-- **Responsive Design**: Optimized across mobile phones, tablets, laptops, and desktop screens
-- **Dynamic Typewriter**: Smooth role transitions in the hero section
-- **Career Highlights Bento Card**: Academic milestones, CGPA, and core technical competencies
-- **Project Filter Tabs**: Client-side filtering across AI & ML, Computer Vision, and Full-Stack Web
-- **Scroll Reveal Animations**: Lightweight IntersectionObserver animations on viewport entry
-- **One-Click Actions**: Quick email/phone copying with animated toast notifications
-- **Direct Navigation**: Smooth section scrolling and floating back-to-top button
+## 🚀 Live Demo & Profiles
+- **LinkedIn:** [linkedin.com/in/omkar-rajamane-441594338](https://www.linkedin.com/in/omkar-rajamane-441594338/)
+- **GitHub:** [github.com/omkarrajamane](https://github.com/omkarrajamane)
+- **NutriLens AI (Featured Project):** [omkarrajamane.pythonanywhere.com](https://omkarrajamane.pythonanywhere.com/)
 
 ---
 
-## 🚀 How to Run Locally
+## 🛠️ Built With
+- **HTML5:** Semantic structure, accessibility, and SEO meta tags.
+- **CSS3:** Custom responsive layout, modern design tokens, dark/light theme support.
+- **JavaScript (ES6):** Theme toggle, active section scrollspy, mobile navigation menu, form validation, and clipboard integration.
 
-1. Clone or download this repository:
+---
+
+## 📁 Project Structure
+```text
+portfolio/
+├── index.html        # Main HTML structure and content
+├── style.css         # Styling, themes (Dark/Light), and responsive layout
+├── script.js         # Interactive features and validation logic
+└── README.md         # Repository documentation
+```
+
+---
+
+## 💻 Local Setup & Running
+1. Clone the repository:
    ```bash
-   git clone https://github.com/OmkarRajamane/MY-PORTFOLIO.git
+   git clone https://github.com/omkarrajamane/MY-PORTFOLIO.git
    ```
-2. Open the project folder:
+2. Navigate into the project folder:
    ```bash
    cd MY-PORTFOLIO
    ```
-3. Open `index.html` in your web browser (or use VS Code Live Server).
-
----
-
-## 📂 Project Structure
-
-```
-portfolio/
-├── index.html       # Semantic HTML layout and sections
-├── style.css        # Custom design system, typography, and responsive styling
-├── script.js        # Interactive features, filters, scroll reveal, and toast engine
-└── README.md        # Project documentation
-```
-
----
-
-## 🌟 Featured Engineering Projects
-
-1. **Smart Medicine Tracker**: Automated prescription OCR, scheduling alerts, and Flask REST API.
-2. **AI-Powered Examination System**: Multi-angle gaze and face tracking with MediaPipe, OpenCV, and TensorFlow Lite.
-3. **AI Nutrition & Calorie Estimation**: Real-time object localization and calorie/macro analysis with YOLOv8 and Streamlit.
-
----
-
-## 👤 Author
-
-- **Omkar S Rajamane**
-- Computer Science & Engineering Student, Jain College of Engineering, Belagavi
-- Email: [omkarrajamane593@gmail.com](mailto:omkarrajamane593@gmail.com)
-- Phone: [+91 7795052916](tel:+917795052916)
-- GitHub: [github.com/OmkarRajamane](https://github.com/OmkarRajamane)
+3. Open `index.html` in your browser or run a simple local server:
+   ```bash
+   # Using Python
+   python -m http.server 3000
+   ```
+4. Visit `http://localhost:3000` in your web browser.
 
 ---
 
 ## 📄 License
-
-This project is open-source and available under the [MIT License](LICENSE).
+© 2026 Omkar Rajamane. All rights reserved.

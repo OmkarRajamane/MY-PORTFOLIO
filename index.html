@@ -1,197 +1,164 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="dark">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Omkar Rajamane - Computer Science & Engineering Student, AI & Full-Stack Developer. Portfolio showcasing projects in AI, computer vision, web applications, and databases.">
-  <meta name="keywords" content="Omkar Rajamane, Portfolio, Computer Science, AI Developer, Python, Machine Learning, React, MySQL, Web Development, OpenCV, Belagavi">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  
+  <!-- SEO Meta Tags -->
+  <title>Omkar Rajamane | Aspiring Software Engineer</title>
+  <meta name="description" content="Personal portfolio of Omkar Rajamane, a final-year Computer Science and Engineering student and aspiring software engineer.">
+  <meta name="keywords" content="Omkar Rajamane, Portfolio, Computer Science, Software Engineer, Python, JavaScript, React, Web Development">
   <meta name="author" content="Omkar Rajamane">
   
-  <!-- Open Graph / Facebook / LinkedIn -->
+  <!-- Open Graph / Social Media Meta Tags -->
+  <meta property="og:title" content="Omkar Rajamane | Aspiring Software Engineer">
+  <meta property="og:description" content="Personal portfolio of Omkar Rajamane, a final-year Computer Science and Engineering student and aspiring software engineer.">
   <meta property="og:type" content="website">
-  <meta property="og:title" content="Omkar Rajamane | AI & Full-Stack Developer">
-  <meta property="og:description" content="Final-year CSE student passionate about building intelligent AI systems, clean full-stack web applications, and database architectures.">
-  <meta property="og:site_name" content="Omkar Rajamane Portfolio">
-
-  <!-- Twitter Card -->
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Omkar Rajamane | Portfolio">
-  <meta name="twitter:description" content="Computer Science & Engineering Student, AI & Full-Stack Developer.">
-
-  <title>Omkar Rajamane | AI & Full-Stack Developer</title>
-
-  <!-- Google Fonts -->
+  <meta property="og:url" content="https://github.com/omkarrajamane">
+  
+  <!-- Favicon SVG -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%230ea5e9'/><text x='50%' y='55%' dominant-baseline='central' text-anchor='middle' fill='white' font-family='sans-serif' font-size='48' font-weight='bold'>OR</text></svg>">
+  
+  <!-- Google Fonts: Inter & Outfit -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600&family=Inter:wght@300;400;500;600;700&family=Outfit:wght@500;600;700;800&display=swap" rel="stylesheet">
-
-  <!-- Font Awesome 6.5.1 -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-
-  <!-- Stylesheet -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@500;600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- Main Stylesheet -->
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-  <!-- Navigation Bar -->
-  <header class="navbar" id="navbar">
-    <div class="nav-container">
-      <a href="#hero" class="nav-brand">
-        <span class="brand-code">&lt;</span><span class="brand-name">Omkar</span><span class="brand-accent">.dev</span><span class="brand-code">/&gt;</span>
+  <!-- Background Subtle Grid & Glow -->
+  <div class="bg-pattern" aria-hidden="true"></div>
+  <div class="bg-glow" aria-hidden="true"></div>
+
+  <!-- Header & Navigation -->
+  <header class="navbar-wrapper" id="header">
+    <nav class="navbar container" aria-label="Main Navigation">
+      <a href="#hero" class="nav-brand" aria-label="Omkar Rajamane Home">
+        <span class="brand-badge">OR</span>
+        <span class="brand-text">Omkar Rajamane</span>
       </a>
 
-      <nav class="nav-links" id="nav-links">
-        <a href="#hero" class="nav-link active">Home</a>
-        <a href="#about" class="nav-link">About</a>
-        <a href="#skills" class="nav-link">Skills</a>
-        <a href="#projects" class="nav-link">Projects</a>
-        <a href="#experience" class="nav-link">Experience</a>
-        <a href="#education" class="nav-link">Education</a>
-        <a href="#certifications" class="nav-link">Certifications</a>
-        <a href="#contact" class="nav-link">Contact</a>
-      </nav>
+      <!-- Desktop Nav Links -->
+      <ul class="nav-menu" id="nav-menu">
+        <li class="nav-item"><a href="#about" class="nav-link">About</a></li>
+        <li class="nav-item"><a href="#skills" class="nav-link">Skills</a></li>
+        <li class="nav-item"><a href="#experience" class="nav-link">Experience</a></li>
+        <li class="nav-item"><a href="#projects" class="nav-link">Projects</a></li>
+        <li class="nav-item"><a href="#certifications" class="nav-link">Certifications</a></li>
+        <li class="nav-item"><a href="#education" class="nav-link">Education</a></li>
+        <li class="nav-item"><a href="#contact" class="nav-link nav-link-contact">Contact</a></li>
+      </ul>
 
+      <!-- Navbar Actions (Theme Switch + Hamburger) -->
       <div class="nav-actions">
-        <a href="#contact" class="btn btn-sm btn-outline nav-resume-btn" id="nav-resume-btn">
-          <i class="fa-solid fa-file-lines"></i> Resume
-        </a>
-        <a href="#contact" class="btn btn-sm btn-primary">Let's Talk</a>
-        <button class="nav-toggle" id="nav-toggle" aria-label="Toggle Navigation">
-          <span></span>
-          <span></span>
-          <span></span>
+        <button id="theme-toggle" class="theme-toggle-btn" aria-label="Toggle light and dark mode" title="Toggle theme">
+          <svg class="sun-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2"/><path d="M12 20v2"/><path d="m4.93 4.93 1.41 1.41"/><path d="m17.66 17.66 1.41 1.41"/><path d="M2 12h2"/><path d="M20 12h2"/><path d="m6.34 17.66-1.41 1.41"/><path d="m19.07 4.93-1.41 1.41"/></svg>
+          <svg class="moon-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/></svg>
+        </button>
+
+        <button id="mobile-toggle" class="mobile-toggle-btn" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="nav-menu">
+          <span class="hamburger-bar"></span>
+          <span class="hamburger-bar"></span>
+          <span class="hamburger-bar"></span>
         </button>
       </div>
-    </div>
+    </nav>
   </header>
 
   <main>
     <!-- HERO SECTION -->
-    <section class="hero-section" id="hero">
-      <div class="container hero-grid">
-        <div class="hero-text">
-          <div class="status-pill">
+    <section id="hero" class="hero-section">
+      <div class="container hero-container">
+        <div class="hero-content">
+          <div class="hero-badge">
             <span class="status-dot"></span>
-            <span>Final-Year CSE Student • Open to Opportunities</span>
+            <span>Available for Opportunities</span>
           </div>
-
           <h1 class="hero-title">
-            Hi, I'm <span class="text-gradient">Omkar Rajamane</span>
+            Hi, I'm <span class="gradient-text">Omkar Rajamane</span>
           </h1>
-
-          <div class="hero-role">
-            <span class="role-prefix">I am a </span>
-            <span class="typewriter" id="typewriter"></span>
-            <span class="typewriter-cursor">|</span>
-          </div>
-
-          <p class="hero-bio">
-            Final-year Computer Science and Engineering student at <strong>Jain College of Engineering</strong> (CGPA: 8.22).
-            Passionate about building intelligent AI systems, clean full-stack web applications, and efficient database architectures.
+          <p class="hero-subtitle">
+            Final-Year Computer Science & Engineering Student <span class="divider-slash">|</span> Aspiring Software Engineer
+          </p>
+          <p class="hero-description">
+            Passionate about software development, programming, and building practical web and software applications that solve real-world problems.
           </p>
 
-          <div class="hero-buttons">
-            <a href="#projects" class="btn btn-primary">
-              <i class="fa-solid fa-code"></i> View Projects
+          <!-- Action Buttons -->
+          <div class="hero-cta-group">
+            <a href="#projects" class="btn btn-primary" id="hero-projects-btn">
+              <span>View My Projects</span>
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
             </a>
-            <a href="#contact" class="btn btn-secondary" id="hero-resume-btn">
-              <i class="fa-solid fa-file-arrow-down"></i> Resume / CV
+            <a href="#contact" class="btn btn-outline" id="hero-contact-btn">
+              <span>Contact Me</span>
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
             </a>
-            <a href="#contact" class="btn btn-outline">
-              <i class="fa-regular fa-envelope"></i> Contact Me
-            </a>
-            <button class="btn btn-outline" id="copy-email-btn" data-email="omkarrajamane593@gmail.com">
-              <i class="fa-regular fa-copy"></i> Copy Email
-            </button>
           </div>
 
-          <div class="hero-socials">
+          <!-- Social Links -->
+          <div class="hero-social-links">
             <span class="social-label">Connect:</span>
-            <div class="social-icons">
-              <a href="https://github.com/OmkarRajamane" target="_blank" rel="noopener noreferrer" aria-label="GitHub Profile" class="social-btn">
-                <i class="fa-brands fa-github"></i>
-              </a>
-              <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn Profile" class="social-btn">
-                <i class="fa-brands fa-linkedin-in"></i>
-              </a>
-              <a href="mailto:omkarrajamane593@gmail.com" aria-label="Send Email" class="social-btn">
-                <i class="fa-solid fa-envelope"></i>
-              </a>
-              <a href="tel:+917795052916" aria-label="Call Phone" class="social-btn">
-                <i class="fa-solid fa-phone"></i>
-              </a>
-            </div>
+            <a href="https://github.com/omkarrajamane" target="_blank" rel="noopener noreferrer" class="social-icon-btn" aria-label="Omkar's GitHub Profile (opens in new tab)" id="hero-github-link">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"/><path d="M9 18c-4.51 2-5-2-7-2"/></svg>
+              <span>GitHub</span>
+            </a>
+            <a href="https://www.linkedin.com/in/omkar-rajamane-441594338/" target="_blank" rel="noopener noreferrer" class="social-icon-btn" aria-label="Omkar's LinkedIn Profile (opens in new tab)" id="hero-linkedin-link">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg>
+              <span>LinkedIn</span>
+            </a>
+            <a href="mailto:omkarrajamane593@gmail.com" class="social-icon-btn" aria-label="Send email to Omkar Rajamane" id="hero-email-link">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+              <span>Email</span>
+            </a>
           </div>
         </div>
 
-        <!-- Modern Career & Tech Highlights Bento Card (No Image) -->
-        <div class="hero-highlights">
-          <div class="highlight-bento-card">
-            <!-- Top Status Bar -->
-            <div class="bento-header">
-              <div class="bento-status">
-                <span class="pulse-dot"></span>
-                <span>Available for 2026 Roles</span>
-              </div>
-              <div class="bento-badge"><i class="fa-solid fa-graduation-cap"></i> B.E. CSE (2026)</div>
-            </div>
-
-            <!-- Key Metric Highlights -->
-            <div class="bento-stats-row">
-              <div class="bento-stat-item">
-                <span class="bento-stat-val text-gradient">8.22</span>
-                <span class="bento-stat-lbl">CGPA (out of 10)</span>
-              </div>
-              <div class="bento-stat-divider"></div>
-              <div class="bento-stat-item">
-                <span class="bento-stat-val text-gradient">3+</span>
-                <span class="bento-stat-lbl">AI & Web Projects</span>
-              </div>
-              <div class="bento-stat-divider"></div>
-              <div class="bento-stat-item">
-                <span class="bento-stat-val text-gradient">4</span>
-                <span class="bento-stat-lbl">Certifications</span>
+        <!-- Hero Card / Quick Overview Panel -->
+        <div class="hero-card-wrapper">
+          <div class="hero-glass-card">
+            <div class="card-header-visual">
+              <div class="avatar-initials">OR</div>
+              <div class="avatar-info">
+                <span class="avatar-name">Omkar Rajamane</span>
+                <span class="avatar-role">Computer Science Engineering</span>
               </div>
             </div>
-
-            <!-- Core Focus Areas -->
-            <div class="bento-focus-section">
-              <div class="bento-section-title">Core Engineering Focus</div>
-              <div class="bento-focus-list">
-                <div class="bento-focus-item">
-                  <div class="focus-icon icon-cyan"><i class="fa-solid fa-brain"></i></div>
-                  <div class="focus-info">
-                    <strong>Python & Problem Solving</strong>
-                    <span>Python, DSA, Problem Solving, OOP</span>
-                  </div>
+            <div class="card-details-list">
+              <div class="detail-item">
+                <span class="detail-icon" aria-hidden="true">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
+                </span>
+                <div class="detail-text">
+                  <strong>Jain College of Engineering</strong>
+                  <span>B.E. Computer Science (2023 – 2027)</span>
                 </div>
-                <div class="bento-focus-item">
-                  <div class="focus-icon icon-indigo"><i class="fa-solid fa-laptop-code"></i></div>
-                  <div class="focus-info">
-                    <strong>Full-Stack Development</strong>
-                    <span>HTML, CSS, JavaScript, React, FastAPI</span>
-                  </div>
+              </div>
+              <div class="detail-item">
+                <span class="detail-icon" aria-hidden="true">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+                </span>
+                <div class="detail-text">
+                  <strong>Location</strong>
+                  <span>Belagavi, Karnataka, India</span>
                 </div>
-                <div class="bento-focus-item">
-                  <div class="focus-icon icon-emerald"><i class="fa-solid fa-database"></i></div>
-                  <div class="focus-info">
-                    <strong>Database & Backend</strong>
-                    <span>PostgreSQL, MySQL, REST APIs</span>
-                  </div>
+              </div>
+              <div class="detail-item">
+                <span class="detail-icon" aria-hidden="true">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                </span>
+                <div class="detail-text">
+                  <strong>Focus Areas</strong>
+                  <span>Web Technologies & AI Applications</span>
                 </div>
               </div>
             </div>
-
-            <!-- Tech Stack Tags Footer -->
-            <div class="bento-footer">
-              <span class="bento-footer-label">Tech Stack:</span>
-              <div class="bento-tech-pills">
-                <span class="pill"><i class="fa-brands fa-python"></i> Python</span>
-                <span class="pill"><i class="fa-brands fa-react"></i> React</span>
-                <span class="pill"><i class="fa-solid fa-database"></i> MySQL</span>
-                <span class="pill"><i class="fa-brands fa-js"></i> JavaScript</span>
-                <span class="pill"><i class="fa-brands fa-git-alt"></i> Git</span>
-              </div>
+            <div class="card-footer-badge">
+              <span class="badge-text">Academic CGPA: <strong>8.22 / 10</strong></span>
             </div>
           </div>
         </div>
@@ -199,158 +166,231 @@
     </section>
 
     <!-- ABOUT SECTION -->
-    <section class="section" id="about">
+    <section id="about" class="section">
       <div class="container">
-        <div class="section-heading">
-          <span class="subtitle">Get To Know Me</span>
-          <h2 class="title">About <span class="text-gradient">Me</span></h2>
-          <p class="description">A brief overview of my background, academic standing, and engineering philosophy.</p>
+        <div class="section-header">
+          <span class="section-tag">Introduction</span>
+          <h2 class="section-title">About Me</h2>
+          <div class="section-divider"></div>
         </div>
 
         <div class="about-grid">
-          <div class="about-card">
-            <div class="about-card-badge"><i class="fa-solid fa-user-graduate"></i> Background</div>
-            <h3 class="about-card-title">Computer Science & Engineering Student</h3>
-            <p class="about-text">
-              I am a final-year Computer Science and Engineering student at <strong>Jain College of Engineering, Belagavi</strong>.
-              I have developed a strong foundation in programming, software engineering, database management, and artificial intelligence.
+          <div class="about-card main-about-card">
+            <p class="about-lead">
+              I am a final-year <strong>Computer Science and Engineering</strong> student at Jain College of Engineering, Belagavi, with a strong passion for software development, programming, web technologies, and practical project development.
             </p>
             <p class="about-text">
-              I enjoy turning complex, real-world problems into clean, high-performance software solutions — whether it's building computer vision systems, crafting responsive full-stack web applications, or optimizing database schemas.
+              Throughout my academic journey, I have cultivated a solid understanding of core computer science fundamentals—including Data Structures, Algorithms, Object-Oriented Programming, and Database Management Systems—while applying modern tools and frameworks to build functional, practical applications.
+            </p>
+            <p class="about-text">
+              I enjoy translating problem statements into robust code, exploring web and artificial intelligence technologies, and continuously strengthening my engineering abilities through hands-on project development.
             </p>
 
-            <div class="contact-chips">
-              <div class="chip">
-                <i class="fa-solid fa-location-dot"></i> Belagavi, Karnataka
+            <div class="about-highlights-grid">
+              <div class="highlight-box">
+                <div class="highlight-number">8.22</div>
+                <div class="highlight-label">Degree CGPA (out of 10)</div>
               </div>
-              <div class="chip">
-                <i class="fa-solid fa-building-columns"></i> Jain College of Engineering.
+              <div class="highlight-box">
+                <div class="highlight-number">2027</div>
+                <div class="highlight-label">Graduation Year</div>
               </div>
-              <div class="chip">
-                <i class="fa-solid fa-graduation-cap"></i> Class of 2026
+              <div class="highlight-box">
+                <div class="highlight-number">3+</div>
+                <div class="highlight-label">Practical Projects</div>
               </div>
             </div>
           </div>
 
-          <div class="stats-grid">
-            <div class="stat-box">
-              <div class="stat-icon"><i class="fa-solid fa-award"></i></div>
-              <div class="stat-value">8.22</div>
-              <div class="stat-label">B.E. CGPA (out of 10)</div>
+          <div class="about-side-cards">
+            <div class="info-card">
+              <div class="info-card-header">
+                <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="info-icon" aria-hidden="true"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
+                <h3>Academic Background</h3>
+              </div>
+              <p>Pursuing Bachelor of Engineering in Computer Science at Jain College Of Engineering, Belagavi, with consistent academic performance and strong foundational knowledge.</p>
             </div>
 
-            <div class="stat-box">
-              <div class="stat-icon"><i class="fa-solid fa-folder-open"></i></div>
-              <div class="stat-value">3+</div>
-              <div class="stat-label">Key AI & Web Projects</div>
-            </div>
-
-            <div class="stat-box">
-              <div class="stat-icon"><i class="fa-solid fa-certificate"></i></div>
-              <div class="stat-value">4</div>
-              <div class="stat-label">Certifications Earned</div>
-            </div>
-
-            <div class="stat-box">
-              <div class="stat-icon"><i class="fa-solid fa-briefcase"></i></div>
-              <div class="stat-value">1</div>
-              <div class="stat-label">AI Internship Completed</div>
+            <div class="info-card">
+              <div class="info-card-header">
+                <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="info-icon" aria-hidden="true"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+                <h3>Development Interest</h3>
+              </div>
+              <p>Focused on writing clean code, building usable web applications with Python & JavaScript, and leveraging modern APIs to build smart solutions.</p>
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- SKILLS SECTION -->
-    <section class="section" id="skills">
+    <!-- TECHNICAL SKILLS SECTION -->
+    <section id="skills" class="section section-alt">
       <div class="container">
-        <div class="section-heading">
-          <span class="subtitle">Technical Proficiency</span>
-          <h2 class="title">Skills & <span class="text-gradient">Technologies</span></h2>
-          <p class="description">Technologies, frameworks, and tools I use to build robust software.</p>
+        <div class="section-header">
+          <span class="section-tag">Technical Competence</span>
+          <h2 class="section-title">Technical Skills</h2>
+          <div class="section-divider"></div>
+          <p class="section-description">A curated breakdown of programming languages, web technologies, databases, core CS subjects, and tools from my resume.</p>
         </div>
 
         <div class="skills-grid">
           <!-- Programming Languages -->
-          <div class="skill-group">
-            <div class="skill-group-header">
-              <i class="fa-solid fa-code"></i>
-              <h3>Programming Languages</h3>
+          <div class="skill-category-card">
+            <div class="skill-card-header">
+              <div class="skill-icon-wrap">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+              </div>
+              <div>
+                <h3 class="skill-group-title">Programming Languages</h3>
+                <span class="skill-group-subtitle">Core languages</span>
+              </div>
             </div>
-            <div class="skill-tags">
-              <span class="skill-tag"><i class="fa-brands fa-python"></i> Python</span>
-              <span class="skill-tag"><i class="fa-brands fa-js"></i> JavaScript</span>
-              <span class="skill-tag"><i class="fa-brands fa-html5"></i> HTML5</span>
-              <span class="skill-tag"><i class="fa-brands fa-css3-alt"></i> CSS3</span>
-            </div>
+            <ul class="skill-tags-list">
+              <li class="skill-tag">JavaScript</li>
+              <li class="skill-tag">Python</li>
+              <li class="skill-tag">C</li>
+            </ul>
           </div>
 
           <!-- Frameworks & Libraries -->
-          <div class="skill-group">
-            <div class="skill-group-header">
-              <i class="fa-solid fa-layer-group"></i>
-              <h3>Frameworks & Libraries</h3>
+          <div class="skill-category-card">
+            <div class="skill-card-header">
+              <div class="skill-icon-wrap">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg>
+              </div>
+              <div>
+                <h3 class="skill-group-title">Frameworks & Libraries</h3>
+                <span class="skill-group-subtitle">UI & Application development</span>
+              </div>
             </div>
-            <div class="skill-tags">
-              <span class="skill-tag"><i class="fa-brands fa-react"></i> React</span>
-              <span class="skill-tag"><i class="fa-solid fa-server"></i> Flask</span>
-              <span class="skill-tag"><i class="fa-brands fa-node-js"></i> Node.js</span>
-              <span class="skill-tag"><i class="fa-solid fa-chart-simple"></i> Streamlit</span>
-            </div>
+            <ul class="skill-tags-list">
+              <li class="skill-tag">React</li>
+            </ul>
           </div>
 
-          <!-- Databases -->
-          <div class="skill-group">
-            <div class="skill-group-header">
-              <i class="fa-solid fa-database"></i>
-              <h3>Databases & Cloud</h3>
+          <!-- Web Technologies -->
+          <div class="skill-category-card">
+            <div class="skill-card-header">
+              <div class="skill-icon-wrap">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/><path d="M2 12h20"/></svg>
+              </div>
+              <div>
+                <h3 class="skill-group-title">Web Technologies</h3>
+                <span class="skill-group-subtitle">Frontend & markup</span>
+              </div>
             </div>
-            <div class="skill-tags">
-              <span class="skill-tag"><i class="fa-solid fa-database"></i> MySQL</span>
-              <span class="skill-tag"><i class="fa-solid fa-fire"></i> Firebase</span>
-              <span class="skill-tag"><i class="fa-solid fa-table"></i> DBMS Concepts</span>
-            </div>
+            <ul class="skill-tags-list">
+              <li class="skill-tag">HTML</li>
+              <li class="skill-tag">CSS</li>
+              <li class="skill-tag">JavaScript</li>
+            </ul>
           </div>
 
-          <!-- AI, ML & Vision -->
-          <div class="skill-group">
-            <div class="skill-group-header">
-              <i class="fa-solid fa-brain"></i>
-              <h3>AI & Computer Vision</h3>
+          <!-- Database -->
+          <div class="skill-category-card">
+            <div class="skill-card-header">
+              <div class="skill-icon-wrap">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/><path d="M3 12c0 1.66 4 3 9 3s9-1.34 9-3"/></svg>
+              </div>
+              <div>
+                <h3 class="skill-group-title">Database</h3>
+                <span class="skill-group-subtitle">Relational data management</span>
+              </div>
             </div>
-            <div class="skill-tags">
-              <span class="skill-tag"><i class="fa-solid fa-robot"></i> Machine Learning</span>
-              <span class="skill-tag"><i class="fa-solid fa-eye"></i> OpenCV</span>
-              <span class="skill-tag"><i class="fa-solid fa-camera"></i> MediaPipe</span>
-              <span class="skill-tag"><i class="fa-solid fa-microchip"></i> TensorFlow Lite</span>
-              <span class="skill-tag"><i class="fa-solid fa-crosshairs"></i> YOLOv8</span>
-              <span class="skill-tag"><i class="fa-solid fa-font"></i> OCR & NLP</span>
-            </div>
+            <ul class="skill-tags-list">
+              <li class="skill-tag">MySQL</li>
+            </ul>
           </div>
 
-          <!-- Developer Tools -->
-          <div class="skill-group">
-            <div class="skill-group-header">
-              <i class="fa-solid fa-screwdriver-wrench"></i>
-              <h3>Developer Tools</h3>
+          <!-- Core Subjects -->
+          <div class="skill-category-card">
+            <div class="skill-card-header">
+              <div class="skill-icon-wrap">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1-2.5-2.5Z"/><path d="M6 6h10"/><path d="M6 10h10"/></svg>
+              </div>
+              <div>
+                <h3 class="skill-group-title">Core Computer Science</h3>
+                <span class="skill-group-subtitle">Academic foundations</span>
+              </div>
             </div>
-            <div class="skill-tags">
-              <span class="skill-tag"><i class="fa-brands fa-git-alt"></i> Git</span>
-              <span class="skill-tag"><i class="fa-brands fa-github"></i> GitHub</span>
-              <span class="skill-tag"><i class="fa-solid fa-code"></i> VS Code</span>
-            </div>
+            <ul class="skill-tags-list">
+              <li class="skill-tag">Data Structures & Algorithms</li>
+              <li class="skill-tag">DBMS</li>
+              <li class="skill-tag">OOP</li>
+              <li class="skill-tag">Operating Systems</li>
+              <li class="skill-tag">Computer Networks</li>
+            </ul>
           </div>
 
-          <!-- Core CS Subjects -->
-          <div class="skill-group">
-            <div class="skill-group-header">
-              <i class="fa-solid fa-book-bookmark"></i>
-              <h3>Core Fundamentals</h3>
+          <!-- Tools -->
+          <div class="skill-category-card">
+            <div class="skill-card-header">
+              <div class="skill-icon-wrap">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
+              </div>
+              <div>
+                <h3 class="skill-group-title">Tools & Platforms</h3>
+                <span class="skill-group-subtitle">Version control & editors</span>
+              </div>
             </div>
-            <div class="skill-tags">
-              <span class="skill-tag"><i class="fa-solid fa-diagram-project"></i> Data Structures</span>
-              <span class="skill-tag"><i class="fa-solid fa-gears"></i> Algorithms</span>
-              <span class="skill-tag"><i class="fa-solid fa-sitemap"></i> Object-Oriented Prog.</span>
+            <ul class="skill-tags-list">
+              <li class="skill-tag">Git</li>
+              <li class="skill-tag">GitHub</li>
+              <li class="skill-tag">VS Code</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- INTERNSHIP / EXPERIENCE SECTION -->
+    <section id="experience" class="section">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">Work History</span>
+          <h2 class="section-title">Internship Experience</h2>
+          <div class="section-divider"></div>
+        </div>
+
+        <div class="timeline-container">
+          <div class="timeline-item">
+            <div class="timeline-marker" aria-hidden="true">
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="14" x="2" y="7" rx="2" ry="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
+            </div>
+            <div class="timeline-content card-box">
+              <div class="timeline-header">
+                <div>
+                  <h3 class="timeline-role">Artificial Intelligence Intern</h3>
+                  <div class="timeline-company-row">
+                    <span class="timeline-company">KodBud</span>
+                    <span class="timeline-badge-aicte">AICTE-Approved Organization</span>
+                    <span class="timeline-loc">• Remote</span>
+                  </div>
+                </div>
+                <div class="timeline-period-badge">
+                  February 2026 – March 2026
+                </div>
+              </div>
+
+              <div class="timeline-body">
+                <p class="timeline-summary">
+                  Completed an intensive 4-week Artificial Intelligence internship at KodBud (February 26 – March 28, 2026), working on practical tasks involving Python, Artificial Intelligence, and machine learning concepts.
+                </p>
+                <ul class="timeline-points">
+                  <li>
+                    <span class="point-icon" aria-hidden="true">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                    </span>
+                    <span>Completed project-based tasks utilizing <strong>Python</strong>, <strong>Artificial Intelligence</strong>, and machine learning workflows.</span>
+                  </li>
+                  <li>
+                    <span class="point-icon" aria-hidden="true">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                    </span>
+                    <span>Applied core AI concepts to practical engineering scenarios and strengthened analytical problem-solving and programming skills.</span>
+                  </li>
+                </ul>
+              </div>
             </div>
           </div>
         </div>
@@ -358,288 +398,245 @@
     </section>
 
     <!-- PROJECTS SECTION -->
-    <section class="section" id="projects">
+    <section id="projects" class="section section-alt">
       <div class="container">
-        <div class="section-heading">
-          <span class="subtitle">Featured Work</span>
-          <h2 class="title">Engineering <span class="text-gradient">Projects</span></h2>
-          <p class="description">Selected projects engineered to solve real-world problems in healthcare, proctoring, and nutrition.</p>
+        <div class="section-header">
+          <span class="section-tag">Featured Work</span>
+          <h2 class="section-title">Projects</h2>
+          <div class="section-divider"></div>
+          <p class="section-description">Practical applications built using modern web technologies, AI integrations, and computer vision.</p>
         </div>
 
-        <!-- Project Filter Buttons -->
-        <div class="project-filters" id="project-filters">
-          <button class="filter-btn active" data-filter="all">All Projects</button>
-          <button class="filter-btn" data-filter="ai-ml">AI & ML</button>
-          <button class="filter-btn" data-filter="vision">Computer Vision</button>
-          <button class="filter-btn" data-filter="fullstack">Full-Stack & Web</button>
-        </div>
-
-        <div class="projects-grid" id="projects-grid">
-          <!-- Project 1: Smart Medicine Tracker -->
-          <div class="project-card" data-category="ai-ml fullstack">
-            <div class="project-header">
-              <div class="project-icon-box">
-                <i class="fa-solid fa-notes-medical"></i>
+        <div class="projects-grid">
+          
+          <!-- PROJECT 3: NutriLens AI (Featured with Live Demo & Repo) -->
+          <article class="project-card project-card-featured" id="project-nutrilens">
+            <div class="featured-ribbon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="1" class="featured-sparkle" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+              <span>Deployed Application</span>
+            </div>
+            <div class="project-card-header">
+              <div class="project-title-row">
+                <h3 class="project-title">NutriLens AI</h3>
+                <span class="live-pill"><span class="pulse-dot"></span> Live</span>
               </div>
-              <div class="project-year-badge">2026</div>
+              <p class="project-desc">
+                An AI-powered food analysis web application that analyzes uploaded food images and automatically estimates food items, portion sizes, calories, protein, carbohydrates, and fats.
+              </p>
             </div>
 
-            <h3 class="project-title">Smart Medicine Tracker</h3>
-
-            <div class="project-tech-tags">
-              <span>Python</span>
-              <span>Machine Learning</span>
-              <span>OCR</span>
-              <span>NLP</span>
-              <span>Flask</span>
+            <div class="project-tech-stack" aria-label="Technologies used">
+              <span class="tech-tag">Python</span>
+              <span class="tech-tag">Flask</span>
+              <span class="tech-tag">HTML</span>
+              <span class="tech-tag">CSS</span>
+              <span class="tech-tag">JavaScript</span>
+              <span class="tech-tag highlight-tag">Groq Vision API</span>
+              <span class="tech-tag">Git</span>
+              <span class="tech-tag">GitHub</span>
             </div>
 
-            <p class="project-desc">
-              An intelligent medication tracking system designed to enhance patient adherence and streamline prescription management.
-            </p>
+            <div class="project-features">
+              <h4 class="features-title">Key Highlights:</h4>
+              <ul class="features-list">
+                <li>Integrated <strong>Groq Vision API</strong> to accurately estimate calories, protein, carbohydrates, and fats from food photographs.</li>
+                <li>Built a responsive and interactive user interface using Flask, HTML, CSS, and JavaScript.</li>
+                <li>Successfully deployed and hosted the live application on <strong>PythonAnywhere</strong> for public access.</li>
+              </ul>
+            </div>
 
-            <ul class="project-bullets">
-              <li><i class="fa-solid fa-angle-right"></i> Automated prescription OCR to scan and extract dosage instructions effortlessly.</li>
-              <li><i class="fa-solid fa-angle-right"></i> Intelligent scheduling and automated alerts to avoid missed medications.</li>
-              <li><i class="fa-solid fa-angle-right"></i> Clean Flask-backed REST API for patient record management.</li>
-            </ul>
+            <div class="project-card-actions">
+              <a href="https://omkarrajamane.pythonanywhere.com/" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm" id="btn-nutrilens-demo" aria-label="View Live Demo for NutriLens AI (opens in new tab)">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                <span>View Live Demo</span>
+              </a>
+              <a href="https://github.com/OmkarRajamane/NutriLens-AI.git" target="_blank" rel="noopener noreferrer" class="btn btn-outline btn-sm" id="btn-nutrilens-code" aria-label="View Source Code for NutriLens AI on GitHub (opens in new tab)">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"/><path d="M9 18c-4.51 2-5-2-7-2"/></svg>
+                <span>View Source Code</span>
+              </a>
+            </div>
+          </article>
 
-            <div class="project-footer">
-              <div class="project-actions">
-                <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="btn-proj-link">
-                  <i class="fa-brands fa-github"></i> <span>Code</span>
-                </a>
-                <a href="#contact" class="btn-proj-link primary">
-                  <i class="fa-solid fa-arrow-up-right-from-square"></i> <span>Live Demo / Details</span>
-                </a>
+          <!-- PROJECT 1: Smart Medicine Tracker -->
+          <article class="project-card" id="project-medicine-tracker">
+            <div class="project-card-header">
+              <div class="project-title-row">
+                <h3 class="project-title">Smart Medicine Tracker</h3>
               </div>
+              <p class="project-desc">
+                A medication tracking web application designed to help patients manage prescriptions, dosage schedules, timely reminders, and adherence history.
+              </p>
             </div>
-          </div>
 
-          <!-- Project 2: AI-Powered Examination System -->
-          <div class="project-card" data-category="ai-ml vision fullstack">
-            <div class="project-header">
-              <div class="project-icon-box">
-                <i class="fa-solid fa-user-shield"></i>
+            <div class="project-tech-stack" aria-label="Technologies used">
+              <span class="tech-tag">Python</span>
+              <span class="tech-tag">Flask</span>
+              <span class="tech-tag">HTML</span>
+              <span class="tech-tag">CSS</span>
+              <span class="tech-tag">JavaScript</span>
+              <span class="tech-tag">Bootstrap</span>
+              <span class="tech-tag">MySQL / SQLite</span>
+            </div>
+
+            <div class="project-features">
+              <h4 class="features-title">Key Highlights:</h4>
+              <ul class="features-list">
+                <li>Implemented secure user authentication, medicine management, and automated dosage scheduling.</li>
+                <li>Engineered real-time browser and desktop alerts with audible sound notifications to prevent missed doses.</li>
+                <li>Built medication adherence tracking enabling users to log doses as <em>Taken</em> or <em>Skipped</em> with full historical log review.</li>
+              </ul>
+            </div>
+
+            <div class="project-card-footer-info">
+              <span class="academic-note"><span class="bullet-dot" aria-hidden="true"></span> Full-Stack Web Application</span>
+            </div>
+          </article>
+
+          <!-- PROJECT 2: AI-Powered Examination System -->
+          <article class="project-card" id="project-exam-system">
+            <div class="project-card-header">
+              <div class="project-title-row">
+                <h3 class="project-title">AI-Powered Examination System</h3>
               </div>
-              <div class="project-year-badge">2026</div>
+              <p class="project-desc">
+                An intelligent online examination system equipped with real-time computer vision proctoring to monitor candidates and ensure fair, secure assessments.
+              </p>
             </div>
 
-            <h3 class="project-title">AI-Powered Examination System</h3>
-
-            <div class="project-tech-tags">
-              <span>OpenCV</span>
-              <span>MediaPipe</span>
-              <span>TensorFlow Lite</span>
-              <span>Node.js</span>
-              <span>Firebase</span>
+            <div class="project-tech-stack" aria-label="Technologies used">
+              <span class="tech-tag">OpenCV</span>
+              <span class="tech-tag">MediaPipe</span>
+              <span class="tech-tag">TensorFlow Lite</span>
+              <span class="tech-tag">Node.js</span>
+              <span class="tech-tag">Firebase</span>
             </div>
 
-            <p class="project-desc">
-              An AI-based online proctoring and assessment platform providing automated real-time exam monitoring and integrity verification.
-            </p>
-
-            <ul class="project-bullets">
-              <li><i class="fa-solid fa-angle-right"></i> Real-time multi-angle face and gaze tracking via MediaPipe & OpenCV.</li>
-              <li><i class="fa-solid fa-angle-right"></i> Lightweight on-device inference using TensorFlow Lite for minimal latency.</li>
-              <li><i class="fa-solid fa-angle-right"></i> Adaptive assessments with secure backend management using Node.js & Firebase.</li>
-            </ul>
-
-            <div class="project-footer">
-              <div class="project-actions">
-                <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="btn-proj-link">
-                  <i class="fa-brands fa-github"></i> <span>Code</span>
-                </a>
-                <a href="#contact" class="btn-proj-link primary">
-                  <i class="fa-solid fa-arrow-up-right-from-square"></i> <span>Live Demo / Details</span>
-                </a>
-              </div>
-            </div>
-          </div>
-
-          <!-- Project 3: AI-Based Nutrition Detection & Calorie Estimation -->
-          <div class="project-card" data-category="ai-ml vision">
-            <div class="project-header">
-              <div class="project-icon-box">
-                <i class="fa-solid fa-bowl-food"></i>
-              </div>
-              <div class="project-year-badge">2025</div>
+            <div class="project-features">
+              <h4 class="features-title">Key Highlights:</h4>
+              <ul class="features-list">
+                <li>Developed computer vision-based real-time proctoring leveraging OpenCV and MediaPipe to detect anomalies.</li>
+                <li>Integrated lightweight TensorFlow Lite models to maintain responsive candidate monitoring during active tests.</li>
+                <li>Engineered adaptive assessments and secure backend coordination with Node.js and Firebase for exam management.</li>
+              </ul>
             </div>
 
-            <h3 class="project-title">AI Nutrition & Calorie Estimation</h3>
-
-            <div class="project-tech-tags">
-              <span>Python</span>
-              <span>YOLOv8</span>
-              <span>OpenCV</span>
-              <span>Streamlit</span>
+            <div class="project-card-footer-info">
+              <span class="academic-note"><span class="bullet-dot" aria-hidden="true"></span> Computer Vision & AI System</span>
             </div>
+          </article>
 
-            <p class="project-desc">
-              Computer vision system capable of identifying food items directly from photos and computing accurate nutritional estimates.
-            </p>
-
-            <ul class="project-bullets">
-              <li><i class="fa-solid fa-angle-right"></i> High-accuracy food classification and boundary localization with YOLOv8.</li>
-              <li><i class="fa-solid fa-angle-right"></i> Automated nutritional analysis calculating calories, proteins, fats, and carbs.</li>
-              <li><i class="fa-solid fa-angle-right"></i> Interactive Streamlit dashboard for real-time camera and image uploads.</li>
-            </ul>
-
-            <div class="project-footer">
-              <div class="project-actions">
-                <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="btn-proj-link">
-                  <i class="fa-brands fa-github"></i> <span>Code</span>
-                </a>
-                <a href="#contact" class="btn-proj-link primary">
-                  <i class="fa-solid fa-arrow-up-right-from-square"></i> <span>Live Demo / Details</span>
-                </a>
-              </div>
-            </div>
-          </div>
         </div>
       </div>
     </section>
 
-    <!-- EXPERIENCE SECTION -->
-    <section class="section" id="experience">
+    <!-- CERTIFICATIONS SECTION -->
+    <section id="certifications" class="section">
       <div class="container">
-        <div class="section-heading">
-          <span class="subtitle">Work History</span>
-          <h2 class="title">Internship <span class="text-gradient">Experience</span></h2>
-          <p class="description">Practical industry training and development contributions.</p>
+        <div class="section-header">
+          <span class="section-tag">Learning & Verification</span>
+          <h2 class="section-title">Certifications</h2>
+          <div class="section-divider"></div>
         </div>
 
-        <div class="timeline">
-          <div class="timeline-item">
-            <div class="timeline-marker"></div>
-            <div class="timeline-card">
-              <div class="timeline-header">
-                <div>
-                  <h3 class="timeline-role">Artificial Intelligence Intern</h3>
-                  <div class="timeline-company"><i class="fa-solid fa-building"></i> KodBud</div>
-                </div>
-                <div class="timeline-period-badge">
-                  <i class="fa-regular fa-calendar"></i> 2026 • 4-Week Internship
-                </div>
+        <div class="certifications-grid">
+          <!-- Cert 1 -->
+          <div class="cert-card">
+            <div class="cert-card-top">
+              <div class="cert-icon-badge" aria-hidden="true">
+                <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="6"/><path d="M15.477 12.89 17 22l-5-3-5 3 1.523-9.11"/></svg>
               </div>
-              <ul class="timeline-bullets">
-                <li>Successfully completed an intensive 4-week Artificial Intelligence internship at KodBud.</li>
-                <li>Gained hands-on experience in practical AI concepts, data processing pipelines, and machine learning models using Python.</li>
-                <li>Collaborated on real-world problem statements, algorithm optimization, and prototype validation.</li>
-              </ul>
+              <span class="cert-provider">IBM SkillsBuild</span>
             </div>
+            <h3 class="cert-title">Artificial Intelligence Fundamentals</h3>
+            <p class="cert-description">
+              Covered fundamental AI concepts, Generative AI, machine learning basics, AI applications, and responsible AI practices.
+            </p>
+          </div>
+
+          <!-- Cert 2 -->
+          <div class="cert-card">
+            <div class="cert-card-top">
+              <div class="cert-icon-badge" aria-hidden="true">
+                <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="6"/><path d="M15.477 12.89 17 22l-5-3-5 3 1.523-9.11"/></svg>
+              </div>
+              <span class="cert-provider">Scaler</span>
+            </div>
+            <h3 class="cert-title">Python Programming</h3>
+            <p class="cert-description">
+              Developed a strong foundation in Python programming, including variables, data types, control flow, functions, data structures, and problem-solving.
+            </p>
+          </div>
+
+          <!-- Cert 3 -->
+          <div class="cert-card">
+            <div class="cert-card-top">
+              <div class="cert-icon-badge" aria-hidden="true">
+                <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="6"/><path d="M15.477 12.89 17 22l-5-3-5 3 1.523-9.11"/></svg>
+              </div>
+              <span class="cert-provider">Infosys Springboard</span>
+            </div>
+            <h3 class="cert-title">Web Development</h3>
+            <p class="cert-description">
+              Learned core web development concepts including HTML, CSS, JavaScript, web page structure, styling, scripting, and basic interactive development.
+            </p>
+          </div>
+
+          <!-- Cert 4 -->
+          <div class="cert-card">
+            <div class="cert-card-top">
+              <div class="cert-icon-badge" aria-hidden="true">
+                <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="6"/><path d="M15.477 12.89 17 22l-5-3-5 3 1.523-9.11"/></svg>
+              </div>
+              <span class="cert-provider">EBSCOlearning</span>
+            </div>
+            <h3 class="cert-title">Framework for Ethical Application</h3>
+            <p class="cert-description">
+              Studied ethical principles for technology applications, responsible decision-making, professional conduct, and effective use of information.
+            </p>
           </div>
         </div>
       </div>
     </section>
 
     <!-- EDUCATION SECTION -->
-    <section class="section" id="education">
+    <section id="education" class="section section-alt">
       <div class="container">
-        <div class="section-heading">
-          <span class="subtitle">Academic Journey</span>
-          <h2 class="title">My <span class="text-gradient">Education</span></h2>
-          <p class="description">Academic qualifications, institutions, and performance milestones.</p>
+        <div class="section-header">
+          <span class="section-tag">Academic Credentials</span>
+          <h2 class="section-title">Education</h2>
+          <div class="section-divider"></div>
         </div>
 
         <div class="education-grid">
           <!-- B.E. Degree -->
           <div class="edu-card">
-            <div class="edu-top">
-              <span class="edu-year">2023 – Present</span>
-              <span class="edu-score-badge">CGPA: 8.22 / 10</span>
+            <div class="edu-icon-wrap" aria-hidden="true">
+              <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
             </div>
-            <h3 class="edu-degree">Bachelor of Engineering (CSE)</h3>
-            <h4 class="edu-school"><i class="fa-solid fa-building-columns"></i> Jain College of Engineering, Belagavi</h4>
-            <p class="edu-desc">
-              Currently in the final year of Computer Science and Engineering with a consistent academic record and focus on AI, full-stack development, and DBMS.
-            </p>
+            <div class="edu-content">
+              <div class="edu-time-badge">Aug 2023 – May 2027</div>
+              <h3 class="edu-degree">Bachelor of Engineering in Computer Science</h3>
+              <h4 class="edu-institution">Jain College Of Engineering, Belagavi</h4>
+              <div class="edu-score-pill">
+                <span class="score-label">CGPA:</span>
+                <span class="score-val">8.22 / 10</span>
+              </div>
+            </div>
           </div>
 
-          <!-- Pre-University -->
+          <!-- Higher Secondary -->
           <div class="edu-card">
-            <div class="edu-top">
-              <span class="edu-year">2021 – 2023</span>
-              <span class="edu-score-badge">Score: 77.66%</span>
+            <div class="edu-icon-wrap" aria-hidden="true">
+              <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1-2.5-2.5Z"/></svg>
             </div>
-            <h3 class="edu-degree">Pre-University Education</h3>
-            <h4 class="edu-school"><i class="fa-solid fa-school"></i> B Shankaranand PU College, Kudachi</h4>
-            <p class="edu-desc">
-              Completed higher secondary education in Science stream with distinction.
-            </p>
-          </div>
-
-          <!-- SSLC -->
-          <div class="edu-card">
-            <div class="edu-top">
-              <span class="edu-year">2020 – 2021</span>
-              <span class="edu-score-badge">Score: 73.76%</span>
-            </div>
-            <h3 class="edu-degree">Secondary School (SSLC)</h3>
-            <h4 class="edu-school"><i class="fa-solid fa-school"></i> New High School, Kudachi</h4>
-            <p class="edu-desc">
-              Completed secondary schooling with strong foundations in mathematics and science.
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- CERTIFICATIONS SECTION -->
-    <section class="section" id="certifications">
-      <div class="container">
-        <div class="section-heading">
-          <span class="subtitle">Verified Credentials</span>
-          <h2 class="title">Certifications & <span class="text-gradient">Training</span></h2>
-          <p class="description">Professional certifications completed across AI, Python, and Web Development.</p>
-        </div>
-
-        <div class="cert-grid">
-          <!-- Cert 1 -->
-          <div class="cert-card">
-            <div class="cert-icon-wrap">
-              <i class="fa-solid fa-brain"></i>
-            </div>
-            <div class="cert-details">
-              <span class="cert-badge">Generative AI</span>
-              <h3 class="cert-name">Generative AI (Gen-AI Camp)</h3>
-              <p class="cert-org"><i class="fa-solid fa-award"></i> AlgoUniversity</p>
-            </div>
-          </div>
-
-          <!-- Cert 2 -->
-          <div class="cert-card">
-            <div class="cert-icon-wrap">
-              <i class="fa-solid fa-microchip"></i>
-            </div>
-            <div class="cert-details">
-              <span class="cert-badge">Artificial Intelligence</span>
-              <h3 class="cert-name">AI Fundamentals</h3>
-              <p class="cert-org"><i class="fa-solid fa-award"></i> IBM SkillsBuild</p>
-            </div>
-          </div>
-
-          <!-- Cert 3 -->
-          <div class="cert-card">
-            <div class="cert-icon-wrap">
-              <i class="fa-brands fa-python"></i>
-            </div>
-            <div class="cert-details">
-              <span class="cert-badge">Programming</span>
-              <h3 class="cert-name">Python Programming</h3>
-              <p class="cert-org"><i class="fa-solid fa-award"></i> Scaler</p>
-            </div>
-          </div>
-
-          <!-- Cert 4 -->
-          <div class="cert-card">
-            <div class="cert-icon-wrap">
-              <i class="fa-solid fa-globe"></i>
-            </div>
-            <div class="cert-details">
-              <span class="cert-badge">Web Development</span>
-              <h3 class="cert-name">Web Development</h3>
-              <p class="cert-org"><i class="fa-solid fa-award"></i> Infosys Springboard</p>
+            <div class="edu-content">
+              <div class="edu-time-badge">2020 – 2022</div>
+              <h3 class="edu-degree">Higher Secondary Education (Class XII)</h3>
+              <h4 class="edu-institution">B Shankaranand PU College, Kudachi</h4>
+              <div class="edu-score-pill">
+                <span class="score-label">Percentage:</span>
+                <span class="score-val">77.66%</span>
+              </div>
             </div>
           </div>
         </div>
@@ -647,87 +644,119 @@
     </section>
 
     <!-- CONTACT SECTION -->
-    <section class="section" id="contact">
+    <section id="contact" class="section">
       <div class="container">
-        <div class="section-heading">
-          <span class="subtitle">Get In Touch</span>
-          <h2 class="title">Contact <span class="text-gradient">Information</span></h2>
-          <p class="description">Have a question or an opportunity? Feel free to reach out directly.</p>
+        <div class="section-header">
+          <span class="section-tag">Get In Touch</span>
+          <h2 class="section-title">Contact</h2>
+          <div class="section-divider"></div>
+          <p class="section-description">Feel free to reach out for software engineering opportunities, internships, project collaborations, or inquiries.</p>
         </div>
 
-        <div class="contact-grid">
-          <div class="contact-info-column">
-            <div class="contact-card">
-              <div class="contact-icon"><i class="fa-solid fa-envelope"></i></div>
-              <div class="contact-body">
-                <h4>Email Address</h4>
-                <a href="mailto:omkarrajamane593@gmail.com" class="contact-val">omkarrajamane593@gmail.com</a>
-              </div>
-              <button class="copy-btn" data-copy="omkarrajamane593@gmail.com" title="Copy Email">
-                <i class="fa-regular fa-copy"></i>
-              </button>
-            </div>
+        <div class="contact-layout">
+          <!-- Direct Contact Details -->
+          <div class="contact-info-panel">
+            <h3 class="contact-info-title">Contact Information</h3>
+            <p class="contact-info-subtitle">You can message me directly through the form or connect via email, phone, or LinkedIn.</p>
 
-            <div class="contact-card">
-              <div class="contact-icon"><i class="fa-solid fa-phone"></i></div>
-              <div class="contact-body">
-                <h4>Phone Number</h4>
-                <a href="tel:+917795052916" class="contact-val">+91 7795052916</a>
+            <div class="contact-items-list">
+              <!-- Email Item -->
+              <div class="contact-item-card">
+                <div class="contact-item-icon" aria-hidden="true">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+                </div>
+                <div class="contact-item-details">
+                  <span class="contact-label">Email</span>
+                  <a href="mailto:omkarrajamane593@gmail.com" class="contact-link" id="contact-email-link">omkarrajamane593@gmail.com</a>
+                </div>
+                <button class="copy-btn" data-copy="omkarrajamane593@gmail.com" aria-label="Copy email address" title="Copy email">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="14" height="14" x="8" y="8" rx="2" ry="2"/><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"/></svg>
+                </button>
               </div>
-              <button class="copy-btn" data-copy="+917795052916" title="Copy Phone Number">
-                <i class="fa-regular fa-copy"></i>
-              </button>
-            </div>
 
-            <div class="contact-card">
-              <div class="contact-icon"><i class="fa-solid fa-location-dot"></i></div>
-              <div class="contact-body">
-                <h4>Location</h4>
-                <span class="contact-val">Belagavi, Karnataka, India</span>
+              <!-- Phone Item -->
+              <div class="contact-item-card">
+                <div class="contact-item-icon" aria-hidden="true">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                </div>
+                <div class="contact-item-details">
+                  <span class="contact-label">Phone</span>
+                  <a href="tel:+917795052916" class="contact-link" id="contact-phone-link">+91 77950 52916</a>
+                </div>
+                <button class="copy-btn" data-copy="+917795052916" aria-label="Copy phone number" title="Copy phone">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="14" height="14" x="8" y="8" rx="2" ry="2"/><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"/></svg>
+                </button>
               </div>
-            </div>
 
-            <div class="contact-card">
-              <div class="contact-icon"><i class="fa-brands fa-linkedin-in"></i></div>
-              <div class="contact-body">
-                <h4>Professional Links</h4>
-                <div class="contact-links-inline">
-                  <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="link-item"><i class="fa-brands fa-linkedin"></i> LinkedIn</a>
-                  <span>•</span>
-                  <a href="https://github.com/OmkarRajamane" target="_blank" rel="noopener noreferrer" class="link-item"><i class="fa-brands fa-github"></i> GitHub</a>
+              <!-- Location Item -->
+              <div class="contact-item-card">
+                <div class="contact-item-icon" aria-hidden="true">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+                </div>
+                <div class="contact-item-details">
+                  <span class="contact-label">Location</span>
+                  <span class="contact-text-static">Belagavi, Karnataka, India</span>
+                </div>
+              </div>
+
+              <!-- LinkedIn Item -->
+              <div class="contact-item-card">
+                <div class="contact-item-icon" aria-hidden="true">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg>
+                </div>
+                <div class="contact-item-details">
+                  <span class="contact-label">LinkedIn</span>
+                  <a href="https://www.linkedin.com/in/omkar-rajamane-441594338/" target="_blank" rel="noopener noreferrer" class="contact-link" id="contact-linkedin-link">linkedin.com/in/omkar-rajamane-441594338</a>
+                </div>
+              </div>
+
+              <!-- GitHub Item -->
+              <div class="contact-item-card">
+                <div class="contact-item-icon" aria-hidden="true">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"/><path d="M9 18c-4.51 2-5-2-7-2"/></svg>
+                </div>
+                <div class="contact-item-details">
+                  <span class="contact-label">GitHub</span>
+                  <a href="https://github.com/omkarrajamane" target="_blank" rel="noopener noreferrer" class="contact-link" id="contact-github-link">github.com/omkarrajamane</a>
                 </div>
               </div>
             </div>
           </div>
 
-          <!-- Contact Message Form -->
-          <div class="contact-form-column">
-            <form class="contact-form" id="contact-form">
-              <div class="form-row">
-                <div class="form-field">
-                  <label for="form-name">Your Name</label>
-                  <input type="text" id="form-name" placeholder="Alex Smith" required>
-                </div>
-                <div class="form-field">
-                  <label for="form-email">Your Email</label>
-                  <input type="email" id="form-email" placeholder="alex@example.com" required>
-                </div>
+          <!-- Interactive Contact Form -->
+          <div class="contact-form-panel">
+            <h3 class="contact-form-title">Send a Message</h3>
+            <form id="contact-form" class="contact-form" novalidate>
+              <div class="form-group">
+                <label for="contact-name" class="form-label">Your Name <span class="required">*</span></label>
+                <input type="text" id="contact-name" name="name" class="form-input" placeholder="e.g. Alex Smith" required autocomplete="name">
+                <span class="form-error-msg" id="name-error" aria-live="polite"></span>
               </div>
 
-              <div class="form-field">
-                <label for="form-subject">Subject</label>
-                <input type="text" id="form-subject" placeholder="Project inquiry / Opportunity" required>
+              <div class="form-group">
+                <label for="contact-email" class="form-label">Your Email <span class="required">*</span></label>
+                <input type="email" id="contact-email" name="email" class="form-input" placeholder="e.g. name@example.com" required autocomplete="email">
+                <span class="form-error-msg" id="email-error" aria-live="polite"></span>
               </div>
 
-              <div class="form-field">
-                <label for="form-message">Message</label>
-                <textarea id="form-message" rows="5" placeholder="Hi Omkar, I would like to discuss..." required></textarea>
+              <div class="form-group">
+                <label for="contact-subject" class="form-label">Subject</label>
+                <input type="text" id="contact-subject" name="_subject" class="form-input" placeholder="e.g. Job Opportunity / Project Discussion" value="Portfolio Contact Form: New Message">
               </div>
 
-              <button type="submit" class="btn btn-primary btn-block" id="form-submit-btn">
-                <span>Send Message</span>
-                <i class="fa-solid fa-paper-plane"></i>
+              <div class="form-group">
+                <label for="contact-message" class="form-label">Message <span class="required">*</span></label>
+                <textarea id="contact-message" name="message" class="form-textarea" rows="5" placeholder="Write your message here..." required></textarea>
+                <span class="form-error-msg" id="message-error" aria-live="polite"></span>
+              </div>
+
+              <button type="submit" class="btn btn-primary btn-block" id="submit-btn">
+                <span class="btn-text">Send Message</span>
+                <svg class="btn-send-icon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+                <span class="btn-spinner" aria-hidden="true"></span>
               </button>
+
+              <div id="form-status" class="form-status-alert" role="alert" style="display: none;"></div>
             </form>
           </div>
         </div>
@@ -737,40 +766,38 @@
 
   <!-- FOOTER -->
   <footer class="footer">
-    <div class="container footer-content">
-      <div class="footer-left">
-        <a href="#hero" class="nav-brand">
-          <span class="brand-code">&lt;</span><span class="brand-name">Omkar</span><span class="brand-accent">.dev</span><span class="brand-code">/&gt;</span>
-        </a>
-        <p class="footer-tagline">Building clean, robust software solutions.</p>
+    <div class="container footer-container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <span class="footer-name">Omkar Rajamane</span>
+          <p class="footer-tagline">Final-Year Computer Science & Engineering Student | Aspiring Software Engineer</p>
+        </div>
+        <div class="footer-links">
+          <a href="https://github.com/omkarrajamane" target="_blank" rel="noopener noreferrer" class="footer-link" aria-label="GitHub">
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"/><path d="M9 18c-4.51 2-5-2-7-2"/></svg>
+            <span>GitHub</span>
+          </a>
+          <a href="https://www.linkedin.com/in/omkar-rajamane-441594338/" target="_blank" rel="noopener noreferrer" class="footer-link" aria-label="LinkedIn">
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg>
+            <span>LinkedIn</span>
+          </a>
+          <a href="mailto:omkarrajamane593@gmail.com" class="footer-link" aria-label="Email">
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+            <span>Email</span>
+          </a>
+        </div>
       </div>
-
-      <div class="footer-nav">
-        <a href="#hero">Home</a>
-        <a href="#about">About</a>
-        <a href="#skills">Skills</a>
-        <a href="#projects">Projects</a>
-        <a href="#experience">Experience</a>
-        <a href="#education">Education</a>
-        <a href="#contact">Contact</a>
-      </div>
-
-      <div class="footer-right">
-        <p class="footer-copy">&copy; <span id="year">2026</span> Omkar Rajamane.</p>
-        <p class="footer-location"><i class="fa-solid fa-location-dot"></i> Belagavi, Karnataka</p>
+      <div class="footer-bottom">
+        <p class="copyright-text">© 2026 Omkar Rajamane. All rights reserved.</p>
+        <p class="footer-subtext">Built with HTML, CSS, & JavaScript</p>
       </div>
     </div>
   </footer>
 
-  <!-- Back to Top Button -->
-  <button class="back-to-top" id="back-to-top" aria-label="Back to Top">
-    <i class="fa-solid fa-arrow-up"></i>
-  </button>
+  <!-- Toast Notification Container -->
+  <div id="toast-container" class="toast-container" aria-live="polite" aria-atomic="true"></div>
 
-  <!-- Toast Notification -->
-  <div class="toast" id="toast">Copied to clipboard!</div>
-
-  <!-- JavaScript File -->
+  <!-- Main JavaScript File -->
   <script src="script.js"></script>
 </body>
 </html>
