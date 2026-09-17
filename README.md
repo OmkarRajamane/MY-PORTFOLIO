@@ -4,21 +4,21 @@ Personal developer portfolio website of **Omkar Rajamane**, a final-year Compute
 
 ---
 
-## 🚀 Live Demo & Profiles
+## Live Demo & Profiles
 - **LinkedIn:** [linkedin.com/in/omkar-rajamane-441594338](https://www.linkedin.com/in/omkar-rajamane-441594338/)
 - **GitHub:** [github.com/omkarrajamane](https://github.com/omkarrajamane)
 - **NutriLens AI (Featured Project):** [omkarrajamane.pythonanywhere.com](https://omkarrajamane.pythonanywhere.com/)
 
 ---
 
-## 🛠️ Built With
+## Built With
 - **HTML5:** Semantic structure, accessibility, and SEO meta tags.
 - **CSS3:** Custom responsive layout, modern design tokens, dark/light theme support.
 - **JavaScript (ES6):** Theme toggle, active section scrollspy, mobile navigation menu, form validation, and clipboard integration.
 
 ---
 
-## 📁 Project Structure
+## Project Structure
 ```text
 portfolio/
 ├── index.html        # Main HTML structure and content
@@ -29,7 +29,7 @@ portfolio/
 
 ---
 
-## 💻 Local Setup & Running
+## Local Setup & Running
 1. Clone the repository:
    ```bash
    git clone https://github.com/omkarrajamane/MY-PORTFOLIO.git
@@ -47,5 +47,5 @@ portfolio/
 
 ---
 
-## 📄 License
+## License
 © 2026 Omkar Rajamane. All rights reserved.
