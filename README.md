@@ -7,7 +7,7 @@ Personal developer portfolio website of **Omkar Rajamane**, a final-year Compute
 ## Live Demo & Profiles
 - **LinkedIn:** [linkedin.com/in/omkar-rajamane-441594338](https://www.linkedin.com/in/omkar-rajamane-441594338/)
 - **GitHub:** [github.com/omkarrajamane](https://github.com/omkarrajamane)
-- **NutriLens AI (Featured Project):** [omkarrajamane.pythonanywhere.com](https://omkarrajamane.pythonanywhere.com/)
+- **NutriLens AI (Live Project):** [omkarrajamane.pythonanywhere.com](https://omkarrajamane.pythonanywhere.com/)
 
 ---
 
