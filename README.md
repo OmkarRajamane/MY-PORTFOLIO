@@ -48,4 +48,4 @@ portfolio/
 ---
 
 ## License
-© 2026 Omkar Rajamane. All rights reserved.
+© 2026 Omkar S Rajamane. All rights reserved.
